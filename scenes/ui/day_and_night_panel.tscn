@@ -1,0 +1,219 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfsfcvjsqpdwx"]
+
+[ext_resource type="Theme" uid="uid://bm443e6xugnys" path="res://scenes/ui/game_ui_theme.tres" id="1_ofhf3"]
+[ext_resource type="Script" path="res://scenes/ui/day_and_night_panel.gd" id="2_q5chh"]
+[ext_resource type="Texture2D" uid="uid://devd7nw42or0w" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Calendar and Clock.png" id="3_55j4d"]
+[ext_resource type="Texture2D" uid="uid://6ajm4tkni5kr" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Bars & Meters.png" id="3_a7ew8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy1xe"]
+atlas = ExtResource("3_55j4d")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2gsn"]
+atlas = ExtResource("3_55j4d")
+region = Rect2(152, 52, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2v17"]
+atlas = ExtResource("3_55j4d")
+region = Rect2(296, 96, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_536qd"]
+atlas = ExtResource("3_a7ew8")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g312j"]
+atlas = ExtResource("3_a7ew8")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd1tu"]
+atlas = ExtResource("3_a7ew8")
+region = Rect2(0, 0, 16, 16)
+
+[node name="DayAndNightPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_ofhf3")
+script = ExtResource("2_q5chh")
+
+[node name="ControlUpper" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 21.0
+offset_top = 5.0
+offset_right = 21.0
+offset_bottom = 5.0
+
+[node name="UpperBackground" type="TextureRect" parent="ControlUpper"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 2
+offset_left = -3.2038
+offset_top = -1.97175
+offset_right = 49.7962
+offset_bottom = 21.0282
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_vy1xe")
+
+[node name="UpperTexture" type="TextureRect" parent="ControlUpper"]
+layout_mode = 2
+anchor_left = 0.0217391
+anchor_top = -0.0454545
+anchor_right = 0.0217391
+anchor_bottom = -0.0454545
+offset_left = 4.50293
+offset_top = 2.69719
+offset_right = 41.5029
+offset_bottom = 20.6972
+texture = SubResource("AtlasTexture_h2gsn")
+expand_mode = 5
+
+[node name="ControlDown" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 188.0
+offset_top = -29.0
+offset_right = 228.0
+offset_bottom = 6.0
+
+[node name="DownTexture" type="TextureRect" parent="ControlDown"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = 89.0
+offset_right = -124.0
+offset_bottom = 107.0
+texture = SubResource("AtlasTexture_r2v17")
+flip_h = true
+
+[node name="DownBackground" type="TextureRect" parent="ControlDown"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -209.0
+offset_top = 89.0
+offset_right = -156.0
+offset_bottom = 112.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_vy1xe")
+flip_v = true
+
+[node name="ControlButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 87.0
+offset_right = 89.0
+offset_bottom = 105.0
+
+[node name="NormalSpeedButton" type="Button" parent="ControlButtons"]
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 18.0
+theme_type_variation = &"DayAndNightButton"
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/NormalSpeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_536qd")
+
+[node name="FastSpeedButton" type="Button" parent="ControlButtons"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 58.0
+offset_bottom = 18.0
+theme_type_variation = &"DayAndNightButton"
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/FastSpeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -7.5
+offset_right = 8.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_g312j")
+
+[node name="FasterSpeedButton" type="Button" parent="ControlButtons"]
+layout_mode = 0
+offset_left = 62.0
+offset_right = 88.0
+offset_bottom = 18.0
+theme_type_variation = &"DayAndNightButton"
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/FasterSpeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qd1tu")
+
+[node name="DayPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 26.0
+offset_right = 127.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+theme_type_variation = &"DayAndNightCounterPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="DayPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="DayLabel" type="Label" parent="DayPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DayAndNightLabel"
+text = "DAY 0"
+
+[node name="TimePanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 43.0
+offset_right = 127.0
+offset_bottom = 77.0
+scale = Vector2(0.5, 0.5)
+theme_type_variation = &"DayAndNightCounterPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="TimePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TimeLabel" type="Label" parent="TimePanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DayAndNightLabel"
+text = "00:00"
+
+[connection signal="pressed" from="ControlButtons/NormalSpeedButton" to="." method="_on_normal_speed_button_pressed"]
+[connection signal="pressed" from="ControlButtons/FastSpeedButton" to="." method="_on_fast_speed_button_pressed"]
+[connection signal="pressed" from="ControlButtons/FasterSpeedButton" to="." method="_on_faster_speed_button_pressed"]

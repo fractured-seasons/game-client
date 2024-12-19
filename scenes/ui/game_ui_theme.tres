@@ -1,0 +1,174 @@
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://bm443e6xugnys"]
+
+[ext_resource type="Texture2D" uid="uid://w44tilyoaugb" path="res://assets/UI/Original/Inventory.png" id="1_7sr6v"]
+[ext_resource type="Texture2D" uid="uid://cb1bxp135phh1" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Calendar & Clock.png" id="1_n5cak"]
+[ext_resource type="Texture2D" uid="uid://cj8elejcgdxhv" path="res://assets/UI/Original/Inventory_Slot_2.png" id="2_ih72r"]
+[ext_resource type="Texture2D" uid="uid://bgovg3du8fwk1" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Windows.png" id="3_wiugr"]
+[ext_resource type="FontFile" uid="uid://d1ar0arvce0bq" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/Fonts/Odderf Basic.ttf" id="4_4pwqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q340"]
+atlas = ExtResource("1_n5cak")
+region = Rect2(4, 0, 40, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ln1u2"]
+texture = SubResource("AtlasTexture_2q340")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pucah"]
+atlas = ExtResource("1_7sr6v")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wv3b0"]
+texture = SubResource("AtlasTexture_pucah")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ruyd"]
+load_path = "res://.godot/imported/Windows.png-9fee457eddf217ee1d4bb83debb7e9cb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksgoi"]
+atlas = SubResource("CompressedTexture2D_4ruyd")
+region = Rect2(144, 96, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lu4c"]
+texture = SubResource("AtlasTexture_ksgoi")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_16ig3"]
+load_path = "res://.godot/imported/Windows.png-9fee457eddf217ee1d4bb83debb7e9cb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s71xq"]
+atlas = SubResource("CompressedTexture2D_16ig3")
+region = Rect2(498, 162, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7drg"]
+texture = SubResource("AtlasTexture_s71xq")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i2y6b"]
+load_path = "res://.godot/imported/Windows.png-9fee457eddf217ee1d4bb83debb7e9cb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkf7g"]
+atlas = SubResource("CompressedTexture2D_i2y6b")
+region = Rect2(498, 194, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ii5ey"]
+texture = SubResource("AtlasTexture_mkf7g")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c4vl"]
+atlas = ExtResource("3_wiugr")
+region = Rect2(498, 130, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8eh52"]
+texture = SubResource("AtlasTexture_4c4vl")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ydvkp"]
+load_path = "res://.godot/imported/Windows.png-9fee457eddf217ee1d4bb83debb7e9cb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdajr"]
+atlas = SubResource("CompressedTexture2D_ydvkp")
+region = Rect2(498, 162, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu8ol"]
+texture = SubResource("AtlasTexture_xdajr")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o80p"]
+atlas = ExtResource("3_wiugr")
+region = Rect2(144, 80.3227, 48, 15.3318)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owqs3"]
+texture = SubResource("AtlasTexture_1o80p")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.09487
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 48, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bh1p"]
+atlas = ExtResource("2_ih72r")
+region = Rect2(5, 5, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrpia"]
+texture = SubResource("AtlasTexture_6bh1p")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gdvfp"]
+load_path = "res://.godot/imported/Inventory_Slot_1.png-1159e826772dcdcf2979f8b2a16d2ab1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6cbv"]
+atlas = SubResource("CompressedTexture2D_gdvfp")
+region = Rect2(5, 5, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebhlh"]
+texture = SubResource("AtlasTexture_k6cbv")
+texture_margin_left = 5.59954
+texture_margin_top = 3.27689
+texture_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h5ppl"]
+load_path = "res://.godot/imported/Inventory_Slot_3.png-e4165ecc02b05eb7a5e09533598326bf.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhs2c"]
+atlas = SubResource("CompressedTexture2D_h5ppl")
+region = Rect2(5, 5, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f82en"]
+texture = SubResource("AtlasTexture_xhs2c")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[resource]
+BigContainer/base_type = &"PanelContainer"
+BigContainer/styles/panel = SubResource("StyleBoxTexture_ln1u2")
+DarkWoodPanel/base_type = &"PanelContainer"
+DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_wv3b0")
+DayAndNightButton/base_type = &"Button"
+DayAndNightButton/styles/disabled = SubResource("StyleBoxTexture_2lu4c")
+DayAndNightButton/styles/focus = SubResource("StyleBoxTexture_d7drg")
+DayAndNightButton/styles/hover = SubResource("StyleBoxTexture_ii5ey")
+DayAndNightButton/styles/normal = SubResource("StyleBoxTexture_8eh52")
+DayAndNightButton/styles/pressed = SubResource("StyleBoxTexture_qu8ol")
+DayAndNightCounterPanel/base_type = &"PanelContainer"
+DayAndNightCounterPanel/styles/panel = SubResource("StyleBoxTexture_owqs3")
+DayAndNightLabel/base_type = &"Label"
+DayAndNightLabel/colors/font_color = Color(0.570681, 0.262877, 9.62615e-08, 1)
+DayAndNightLabel/font_sizes/font_size = 16
+DayAndNightLabel/fonts/font = ExtResource("4_4pwqm")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+ToolButton/base_type = &"Button"
+ToolButton/styles/hover = SubResource("StyleBoxTexture_yrpia")
+ToolButton/styles/normal = SubResource("StyleBoxTexture_ebhlh")
+ToolButton/styles/pressed = SubResource("StyleBoxTexture_f82en")

@@ -1,9 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp5g4wgfr1n5t"]
+[gd_scene load_steps=10 format=3 uid="uid://dp5g4wgfr1n5t"]
 
 [ext_resource type="Texture2D" uid="uid://c7yhn41nxnp84" path="res://assets/game/objects/Tree.png" id="1_5ya4r"]
 [ext_resource type="Script" path="res://scenes/objects/trees/small_tree.gd" id="2_bj021"]
-[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://components/hurt_component.tscn" id="3_x6vj3"]
-[ext_resource type="PackedScene" uid="uid://by1rn2b3fb35x" path="res://components/damage_component.tscn" id="4_g6n5n"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="3_x6vj3"]
+[ext_resource type="PackedScene" uid="uid://by1rn2b3fb35x" path="res://scenes/components/damage_component.tscn" id="4_g6n5n"]
+[ext_resource type="Shader" path="res://scenes/objects/trees/tree_shake.gdshader" id="4_s2rua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwanq"]
+resource_local_to_scene = true
+shader = ExtResource("4_s2rua")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kthku"]
 atlas = ExtResource("1_5ya4r")
@@ -16,6 +24,7 @@ radius = 4.0
 size = Vector2(8.625, 19.25)
 
 [node name="SmallTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_uwanq")
 position = Vector2(0, -13)
 rotation = 3.14159
 scale = Vector2(-1, -1)
@@ -25,13 +34,14 @@ script = ExtResource("2_bj021")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(8.74228e-07, 10)
+position = Vector2(-2.53518e-05, 10)
 shape = SubResource("CircleShape2D_j34jh")
 
 [node name="HurtComponent" parent="." instance=ExtResource("3_x6vj3")]
+tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(3.57628e-07, 4)
+position = Vector2(-7.62939e-06, 3)
 shape = SubResource("RectangleShape2D_a3kph")
 debug_color = Color(0.622356, 0.533388, 3.85046e-07, 0.42)
 

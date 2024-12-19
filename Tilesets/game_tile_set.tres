@@ -1,11 +1,13 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bcjr3vuqivmcr"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://bcjr3vuqivmcr"]
 
 [ext_resource type="Texture2D" uid="uid://c1gxludk0r574" path="res://assets/game/tilesets/Dirt/Dirt1.png" id="1_kw8om"]
 [ext_resource type="Texture2D" uid="uid://c2ibbmg3714tu" path="res://assets/game/tilesets/Dirt/Dirt2 - simplified.png" id="2_pya67"]
 [ext_resource type="PackedScene" uid="uid://dp5g4wgfr1n5t" path="res://scenes/objects/trees/small_tree.tscn" id="3_mhwt7"]
+[ext_resource type="PackedScene" uid="uid://bxq751niacqe8" path="res://scenes/objects/trees/large_tree.tscn" id="4_raagr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpqmy"]
 texture = ExtResource("1_kw8om")
+1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g4xr"]
 texture = ExtResource("2_pya67")
@@ -151,6 +153,7 @@ texture = ExtResource("2_pya67")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_c6t30"]
 scenes/1/scene = ExtResource("3_mhwt7")
+scenes/3/scene = ExtResource("4_raagr")
 
 [resource]
 terrain_set_0/mode = 0

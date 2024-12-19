@@ -23,7 +23,7 @@
 [ext_resource type="Script" path="res://scenes/characters/player/chopping_state.gd" id="21_s4lh5"]
 [ext_resource type="Script" path="res://scenes/characters/player/tilling_state.gd" id="22_qgv7u"]
 [ext_resource type="Script" path="res://scenes/characters/player/watering_state.gd" id="23_fdy7g"]
-[ext_resource type="PackedScene" uid="uid://dng53ysb2u8nm" path="res://components/hit_component.tscn" id="24_uv6il"]
+[ext_resource type="PackedScene" uid="uid://dng53ysb2u8nm" path="res://scenes/components/hit_component.tscn" id="24_uv6il"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apffr"]
 atlas = ExtResource("1_6ys1d")
@@ -2846,16 +2846,16 @@ radius = 4.0
 radius = 3.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_xccpj")
-current_tool = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
-animation = &"chopping_back"
+animation = &"chopping_left"
 autoplay = "idle_front"
-frame = 4
-frame_progress = 0.659622
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
@@ -2894,6 +2894,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="HitComponent" parent="." instance=ExtResource("24_uv6il")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
-position = Vector2(0, -19)
+position = Vector2(-13, -3)
 shape = SubResource("CircleShape2D_eay71")
 debug_color = Color(0.766222, 0.315245, 0.801636, 0.42)

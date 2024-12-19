@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cck0yvbioyckf"]
+
+[ext_resource type="Theme" uid="uid://bm443e6xugnys" path="res://scenes/ui/game_ui_theme.tres" id="1_gpts3"]
+[ext_resource type="PackedScene" uid="uid://d18uuvb4872ju" path="res://scenes/ui/tools_panel.tscn" id="2_gwol3"]
+[ext_resource type="PackedScene" uid="uid://cfsfcvjsqpdwx" path="res://scenes/ui/day_and_night_panel.tscn" id="3_tawcw"]
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_gpts3")
+
+[node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_gwol3")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("3_tawcw")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
