@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://crnit5hiwc3kb"]
+
+[ext_resource type="Script" path="res://scenes/objects/plants/watermelon.gd" id="1_lfi5y"]
+[ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="2_3i51t"]
+[ext_resource type="PackedScene" uid="uid://dpihtf6lkuco1" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_se6n4"]
+[ext_resource type="PackedScene" uid="uid://c4c1okpsv8dud" path="res://scenes/objects/plants/watering_particles.tscn" id="4_eqdu0"]
+[ext_resource type="PackedScene" uid="uid://ort5yl360pwv" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_goh6l"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="6_lygw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssws5"]
+size = Vector2(10.25, 7.25)
+
+[node name="Watermelon" type="Node2D"]
+script = ExtResource("1_lfi5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_3i51t")
+hframes = 6
+frame = 2
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_goh6l")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_se6n4")]
+
+[node name="WateringParticles" parent="." instance=ExtResource("4_eqdu0")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("6_lygw5")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("RectangleShape2D_ssws5")
