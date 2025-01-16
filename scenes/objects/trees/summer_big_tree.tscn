@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl2vorigmdxx2"]
+
+[ext_resource type="Texture2D" uid="uid://c7yhn41nxnp84" path="res://assets/game/objects/Tree.png" id="1_vkg2e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyiop"]
+atlas = ExtResource("1_vkg2e")
+region = Rect2(64, 144, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hydfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyiop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3u5xk"]
+radius = 3.0
+
+[node name="SummerBigTree" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hydfx")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_3u5xk")
