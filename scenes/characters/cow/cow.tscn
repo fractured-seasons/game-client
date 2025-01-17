@@ -341,10 +341,19 @@ script = ExtResource("1_27fuv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_kc2fy")
+<<<<<<< HEAD
 animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+=======
+animation = &"idle_right"
+autoplay = "idle_front"
+frame_progress = 0.123885
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+>>>>>>> a3dd13b (Final touch before presentation)
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_kpx7t")
 

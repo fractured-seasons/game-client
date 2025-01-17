@@ -22,7 +22,11 @@ script = ExtResource("1_gmyc7")
 position = Vector2(0, -7)
 texture = ExtResource("1_bwcl7")
 hframes = 6
+<<<<<<< HEAD
 frame = 2
+=======
+frame = 5
+>>>>>>> a3dd13b (Final touch before presentation)
 
 [node name="WateringParticles" parent="." instance=ExtResource("2_c0orr")]
 

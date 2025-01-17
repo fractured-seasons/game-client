@@ -1,13 +1,30 @@
+<<<<<<< HEAD
 [gd_scene load_steps=13 format=4 uid="uid://gjulxgpnl5ew"]
 
 [ext_resource type="TileSet" uid="uid://bcjr3vuqivmcr" path="res://Tilesets/game_tile_set.tres" id="1_cy12q"]
+=======
+[gd_scene load_steps=27 format=4 uid="uid://gjulxgpnl5ew"]
+
+[ext_resource type="PackedScene" uid="uid://cck0yvbioyckf" path="res://scenes/ui/game_screen.tscn" id="1_100vy"]
+[ext_resource type="TileSet" uid="uid://bcjr3vuqivmcr" path="res://Tilesets/game_tile_set.tres" id="1_cy12q"]
+[ext_resource type="PackedScene" uid="uid://tprfcku1ospd" path="res://scenes/components/day_night_cycle_component.tscn" id="1_w6v4r"]
+>>>>>>> a3dd13b (Final touch before presentation)
 [ext_resource type="PackedScene" uid="uid://c73cg4mblr717" path="res://scenes/characters/player/player.tscn" id="2_81nwu"]
 [ext_resource type="PackedScene" uid="uid://cl2vorigmdxx2" path="res://scenes/objects/trees/summer_big_tree.tscn" id="3_hllgi"]
 [ext_resource type="PackedScene" uid="uid://crnit5hiwc3kb" path="res://scenes/objects/plants/watermelon.tscn" id="4_bs4mv"]
 [ext_resource type="PackedScene" uid="uid://cftqkluxlpd6v" path="res://scenes/objects/trees/summer_small_tree.tscn" id="4_xn1bh"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cid2mvtucdn3e" path="res://scenes/objects/plants/watermelon_harvest.tscn" id="5_d2vd8"]
 [ext_resource type="PackedScene" uid="uid://dhmavtr3ra1c5" path="res://scenes/objects/plants/sunflower.tscn" id="5_trcpk"]
 [ext_resource type="PackedScene" uid="uid://cpvtbbalgvftk" path="res://scenes/objects/plants/sunflower_harvest.tscn" id="6_080pw"]
+=======
+[ext_resource type="PackedScene" uid="uid://dhmavtr3ra1c5" path="res://scenes/objects/plants/sunflower.tscn" id="5_trcpk"]
+[ext_resource type="PackedScene" uid="uid://bxq751niacqe8" path="res://scenes/objects/trees/large_tree.tscn" id="10_p4qrq"]
+[ext_resource type="Shader" path="res://scenes/objects/trees/tree_shake.gdshader" id="11_sm8jb"]
+[ext_resource type="PackedScene" uid="uid://dp5g4wgfr1n5t" path="res://scenes/objects/trees/small_tree.tscn" id="12_jmhxd"]
+[ext_resource type="PackedScene" uid="uid://cg18oyladgu3r" path="res://scenes/characters/cow/cow.tscn" id="14_d4l0m"]
+[ext_resource type="PackedScene" uid="uid://ck30yfk303gcj" path="res://scenes/characters/chicken/chicken.tscn" id="15_enyj4"]
+>>>>>>> a3dd13b (Final touch before presentation)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gtul"]
 distance = 24.0
@@ -21,8 +38,76 @@ distance = -1274.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h3l6y"]
 distance = -762.0
 
+<<<<<<< HEAD
 [node name="TestSceneFullmap" type="Node2D"]
 
+=======
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3mfh"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsqfr"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdgwv"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fuxm5"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1uvrd"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chwk6"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0lq7x"]
+resource_local_to_scene = true
+shader = ExtResource("11_sm8jb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fq22h"]
+vertices = PackedVector2Array(378.672, 100.742, 343.617, 40.4219, 528.648, 44.7813, 535.719, 145.453, 484.039, 202.383, 387.148, 168.602)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(369, 104, 378, 176, 487, 214, 546, 149, 538, 35, 326, 30)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jjytg"]
+vertices = PackedVector2Array(530.289, 407.969, 370.578, 416.844, 147.383, 279.422, 289.523, 277.039)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(292, 267, 113, 270, 368, 427, 566, 416)])
+
+[node name="TestSceneFullmap" type="Node2D"]
+
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("1_w6v4r")]
+
+[node name="GameScreen" parent="." instance=ExtResource("1_100vy")]
+
+>>>>>>> a3dd13b (Final touch before presentation)
 [node name="MapBoundaries" type="StaticBody2D" parent="."]
 
 [node name="UpBorder" type="CollisionShape2D" parent="MapBoundaries"]
@@ -94,6 +179,7 @@ tile_set = ExtResource("1_cy12q")
 [node name="Sunflower" parent="Crops" instance=ExtResource("5_trcpk")]
 position = Vector2(39, 154)
 
+<<<<<<< HEAD
 [node name="SunflowerHarvest" parent="Crops" instance=ExtResource("6_080pw")]
 position = Vector2(56, 144)
 
@@ -102,10 +188,21 @@ position = Vector2(72, 144)
 
 [node name="SunflowerHarvest3" parent="Crops" instance=ExtResource("6_080pw")]
 position = Vector2(88, 144)
+=======
+[node name="Sunflower6" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(55, 154)
+
+[node name="Sunflower7" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(55, 169)
+
+[node name="Sunflower8" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(71, 153)
+>>>>>>> a3dd13b (Final touch before presentation)
 
 [node name="Watermelon" parent="Crops" instance=ExtResource("4_bs4mv")]
 position = Vector2(72, 169)
 
+<<<<<<< HEAD
 [node name="WatermelonHarvest" parent="Crops" instance=ExtResource("5_d2vd8")]
 position = Vector2(56, 160)
 
@@ -117,6 +214,13 @@ position = Vector2(40, 176)
 
 [node name="WatermelonHarvest3" parent="Crops" instance=ExtResource("5_d2vd8")]
 position = Vector2(72, 176)
+=======
+[node name="Watermelon5" parent="Crops" instance=ExtResource("4_bs4mv")]
+position = Vector2(71, 185)
+
+[node name="Watermelon6" parent="Crops" instance=ExtResource("4_bs4mv")]
+position = Vector2(88, 169)
+>>>>>>> a3dd13b (Final touch before presentation)
 
 [node name="Watermelon2" parent="Crops" instance=ExtResource("4_bs4mv")]
 position = Vector2(88, 185)
@@ -130,6 +234,7 @@ position = Vector2(39, 201)
 [node name="Sunflower3" parent="Crops" instance=ExtResource("5_trcpk")]
 position = Vector2(71, 201)
 
+<<<<<<< HEAD
 [node name="Watermelon4" parent="Crops" instance=ExtResource("4_bs4mv")]
 position = Vector2(40, 169)
 
@@ -148,6 +253,20 @@ position = Vector2(104, 176)
 [node name="WatermelonHarvest5" parent="Crops" instance=ExtResource("5_d2vd8")]
 position = Vector2(104, 144)
 
+=======
+[node name="Sunflower9" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(87, 201)
+
+[node name="Sunflower10" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(103, 184)
+
+[node name="Watermelon4" parent="Crops" instance=ExtResource("4_bs4mv")]
+position = Vector2(40, 169)
+
+[node name="Sunflower4" parent="Crops" instance=ExtResource("5_trcpk")]
+position = Vector2(103, 169)
+
+>>>>>>> a3dd13b (Final touch before presentation)
 [node name="Sunflower5" parent="Crops" instance=ExtResource("5_trcpk")]
 position = Vector2(103, 201)
 
@@ -155,7 +274,11 @@ position = Vector2(103, 201)
 y_sort_enabled = true
 
 [node name="Player" parent="EnvironmentalObjects" instance=ExtResource("2_81nwu")]
+<<<<<<< HEAD
 position = Vector2(143, 174)
+=======
+position = Vector2(146, 177)
+>>>>>>> a3dd13b (Final touch before presentation)
 
 [node name="SummerTrees" type="Node2D" parent="EnvironmentalObjects"]
 y_sort_enabled = true
@@ -239,3 +362,72 @@ polygon = PackedVector2Array(127, 92, 127, 75, 122, 75, 122, 46, 131, 39, 131, 3
 [node name="WorldDetails" type="TileMapLayer" parent="EnvironmentalObjects"]
 tile_map_data = PackedByteArray("AAAKAAsAEwAAAAAAAAAPAAYAEwADAAAAAAAXAAUAEwACAAIAAAAJABAAEwACAAEAAAANAA0AEwADAAIAAAAMABMAEwAAAAEAAAAdAAUAEwABAAEAAAAkAAUAEwADAAIAAAAaAAQAEwABAAAAAAAWAAoAEwAAAAIAAAASABgAEwACAAIAAAAMABkAEwAAAAIAAAAOABYAEwADAAEAAAAdABgAEwACAAEAAAAaABYAEwABAAAAAAAVABYAEwADAAIAAAAJABwAEwACAAIAAAAMAB8AEwACAAAAAAAIACAAEwACAAAAAAAOACEAEwACAAAAAAAIACMAEwAAAAIAAAAWACQAEwADAAAAAAAGACgAEwADAAEAAAASACMAEwACAAAAAAAMAAYAEwADAAEAAAAOAAkAEwAJAAEAAAARAAMAEwAKAAEAAAAZAAgAEwALAAEAAAADAAUAEwALAAAAAAAQAA8AEwAIAAEAAAATAAsAEwAIAAAAAAAZAAIAEwAJAAAAAAAcAAsAEwAKAAEAAAAQABQAEwALAAAAAAAEABcAEwAJAAAAAAAIABQAEwALAAEAAAAPABwAEwAKAAAAAAAYABkAEwAKAAAAAAAeAAkAEwAIAAEAAAAjAAMAEwAIAAEAAAAeAAIAEwALAAAAAAADAA4AEwAJAAEAAAAFAAcAEwAKAAAAAAAHAA0AEgAHAAAAAAAHAAgAEgAEAAAAAAAPAAoAEgAHAAAAAAAFAAUAEgAFAAEAAAAQAAMAEgAFAAEAAAAeAAgAEgAGAAEAAAARABIAEgAEAAEAAAANABEAEgAHAAEAAAAEABIAEgAFAAEAAAAHABMAEgAFAAEAAAAQAA4AEgAFAAAAAAAaAAsAEgAFAAAAAAA=")
 tile_set = ExtResource("1_cy12q")
+<<<<<<< HEAD
+=======
+
+[node name="LargeTree" parent="." instance=ExtResource("10_p4qrq")]
+material = SubResource("ShaderMaterial_d3mfh")
+position = Vector2(525, 281)
+
+[node name="LargeTree2" parent="." instance=ExtResource("10_p4qrq")]
+material = SubResource("ShaderMaterial_gsqfr")
+position = Vector2(526, 308)
+
+[node name="LargeTree3" parent="." instance=ExtResource("10_p4qrq")]
+material = SubResource("ShaderMaterial_pdgwv")
+position = Vector2(561, 285)
+
+[node name="LargeTree4" parent="." instance=ExtResource("10_p4qrq")]
+material = SubResource("ShaderMaterial_fuxm5")
+position = Vector2(543, 291)
+
+[node name="SmallTree" parent="." instance=ExtResource("12_jmhxd")]
+material = SubResource("ShaderMaterial_1uvrd")
+position = Vector2(449, 115)
+
+[node name="SmallTree2" parent="." instance=ExtResource("12_jmhxd")]
+material = SubResource("ShaderMaterial_chwk6")
+position = Vector2(468, 235)
+
+[node name="SmallTree3" parent="." instance=ExtResource("12_jmhxd")]
+material = SubResource("ShaderMaterial_0lq7x")
+position = Vector2(529, 190)
+
+[node name="Chickens" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
+navigation_polygon = SubResource("NavigationPolygon_fq22h")
+
+[node name="Chicken" parent="Chickens" instance=ExtResource("15_enyj4")]
+position = Vector2(379, 75)
+
+[node name="Chicken2" parent="Chickens" instance=ExtResource("15_enyj4")]
+position = Vector2(473, 125)
+
+[node name="Chicken3" parent="Chickens" instance=ExtResource("15_enyj4")]
+position = Vector2(518, 126)
+
+[node name="Chicken4" parent="Chickens" instance=ExtResource("15_enyj4")]
+position = Vector2(483, 180)
+
+[node name="Chicken5" parent="Chickens" instance=ExtResource("15_enyj4")]
+position = Vector2(441, 165)
+
+[node name="Cows" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
+navigation_polygon = SubResource("NavigationPolygon_jjytg")
+navigation_layers = 2
+
+[node name="Cow" parent="Cows" instance=ExtResource("14_d4l0m")]
+position = Vector2(372, 397)
+
+[node name="Cow2" parent="Cows" instance=ExtResource("14_d4l0m")]
+position = Vector2(376, 366)
+
+[node name="Cow3" parent="Cows" instance=ExtResource("14_d4l0m")]
+position = Vector2(255, 299)
+
+[node name="Cow4" parent="Cows" instance=ExtResource("14_d4l0m")]
+position = Vector2(319, 324)
+>>>>>>> a3dd13b (Final touch before presentation)

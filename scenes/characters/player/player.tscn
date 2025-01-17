@@ -1547,7 +1547,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xqhy6")
 }],
+<<<<<<< HEAD
 "loop": false,
+=======
+"loop": true,
+>>>>>>> a3dd13b (Final touch before presentation)
 "name": &"chopping_right",
 "speed": 8.0
 }, {
@@ -2834,7 +2838,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3r1d7")
 }],
+<<<<<<< HEAD
 "loop": false,
+=======
+"loop": true,
+>>>>>>> a3dd13b (Final touch before presentation)
 "name": &"watering_right",
 "speed": 8.0
 }]
@@ -2853,12 +2861,20 @@ script = ExtResource("1_xccpj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
+<<<<<<< HEAD
 animation = &"chopping_left"
 autoplay = "idle_front"
 frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+=======
+animation = &"hoe_front"
+autoplay = "idle_front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+>>>>>>> a3dd13b (Final touch before presentation)
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_lub8e")
 
@@ -2896,6 +2912,10 @@ hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisi
 [node name="HitComponent" parent="." instance=ExtResource("24_uv6il")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> a3dd13b (Final touch before presentation)
 position = Vector2(-13, -3)
 shape = SubResource("CircleShape2D_eay71")
 debug_color = Color(0.766222, 0.315245, 0.801636, 0.42)

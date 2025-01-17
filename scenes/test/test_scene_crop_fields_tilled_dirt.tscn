@@ -224,7 +224,11 @@ tile_set = ExtResource("1_yqy55")
 [node name="Player" parent="." instance=ExtResource("3_v3ha6")]
 position = Vector2(153, 212)
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="Player"]
+=======
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+>>>>>>> a3dd13b (Final touch before presentation)
 zoom = Vector2(1.5, 1.5)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_7tymr")]
