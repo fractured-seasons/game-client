@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://obmc1e0gb54p"]
+
+[ext_resource type="Script" path="res://scenes/objects/plants/wheat.gd" id="1_yb87c"]
+[ext_resource type="PackedScene" uid="uid://ort5yl360pwv" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="2_yd07x"]
+[ext_resource type="PackedScene" uid="uid://dpihtf6lkuco1" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_x4chi"]
+[ext_resource type="PackedScene" uid="uid://c4c1okpsv8dud" path="res://scenes/objects/plants/watering_particles.tscn" id="4_x3y26"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="5_2ssey"]
+[ext_resource type="Texture2D" uid="uid://b2oxwt8a2o4c" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Wheat.png" id="6_nibm8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agrhx"]
+radius = 5.0
+
+[node name="Wheat" type="Node2D"]
+script = ExtResource("1_yb87c")
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("2_yd07x")]
+growth_states_list = Array[int]([0, 1, 2, 3, 4, 6])
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_x4chi")]
+
+[node name="WateringParticles" parent="." instance=ExtResource("4_x3y26")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_2ssey")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_agrhx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -7)
+texture = ExtResource("6_nibm8")
+hframes = 6
+frame = 2

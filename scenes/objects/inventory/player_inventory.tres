@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=19 format=3 uid="uid://bci1b63anfiyu"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_slot.gd" id="2_5xmev"]
+[ext_resource type="Resource" uid="uid://dnb2w41o8yvdo" path="res://scenes/objects/inventory/items/BeetrootHarvest.tres" id="3_3fqrn"]
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory.gd" id="3_18rli"]
+
+[sub_resource type="Resource" id="Resource_q8qm8"]
+script = ExtResource("2_5xmev")
+item = ExtResource("3_3fqrn")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_3w3xn"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_712yy"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_j2t22"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_73vdg"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_gg2sc"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_n6tiv"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_lbtn5"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_xhqyb"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ydgyq"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_tjkiw"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_42s18"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vrlc7"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ffexk"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_fqtak"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[resource]
+script = ExtResource("3_18rli")
+slots = Array[ExtResource("2_5xmev")]([SubResource("Resource_q8qm8"), SubResource("Resource_3w3xn"), SubResource("Resource_712yy"), SubResource("Resource_j2t22"), SubResource("Resource_73vdg"), SubResource("Resource_gg2sc"), SubResource("Resource_n6tiv"), SubResource("Resource_lbtn5"), SubResource("Resource_xhqyb"), SubResource("Resource_ydgyq"), SubResource("Resource_tjkiw"), SubResource("Resource_42s18"), SubResource("Resource_vrlc7"), SubResource("Resource_ffexk"), SubResource("Resource_fqtak")])

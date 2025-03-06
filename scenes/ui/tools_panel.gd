@@ -17,6 +17,11 @@ func _on_tool_tilling_pressed() -> void:
 
 func _on_tool_watering_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+func _on_tool_log_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.PlantSunflower)
+
+func _on_tool_log_3_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.PlantWatermelon)
 
 func _input(event: InputEvent) -> void:
 	_choose_tool(event)
@@ -28,3 +33,5 @@ func _choose_tool(event: InputEvent) -> void:
 		ToolManager.select_tool(DataTypes.Tools.TillGround)
 	elif Input.is_action_just_pressed("third_tool"):
 		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+	elif Input.is_action_just_pressed("forth_tool"):
+		ToolManager.select_tool(DataTypes.Tools.PlantSunflower)

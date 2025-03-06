@@ -1,0 +1,7 @@
+How to create Inventory Items:
+
+Inspector -> + -> InventoryItem
+Set Name and Texture
+Save the Resource (tres)
+
+Now we have to set the scene formed with Sprite2D, CollectableComponent and a CollisionShape2D

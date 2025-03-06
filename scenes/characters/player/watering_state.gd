@@ -3,6 +3,7 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var hit_component_collision_shape: CollisionShape2D
+
 func _ready() -> void:
 	hit_component_collision_shape.disabled = true
 	hit_component_collision_shape.position = Vector2(0, 0);
@@ -36,6 +37,7 @@ func _on_enter() -> void:
 	else:
 		animated_sprite_2d.play("watering_front")
 		hit_component_collision_shape.position = Vector2(0, 7)
+	
 	hit_component_collision_shape.disabled = false
 
 

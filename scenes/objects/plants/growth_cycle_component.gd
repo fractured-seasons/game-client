@@ -1,8 +1,9 @@
 class_name GrowthCycleComponent
 extends Node
 
-@export var current_growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Germination
 @export_range(5, 365) var days_until_harvest: int = 7
+@export var growth_states_list: Array[DataTypes.GrowthStates] = []
+@export var current_growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Sprout
 
 signal crop_maturity
 signal crop_harvesting
@@ -10,6 +11,7 @@ signal crop_harvesting
 var is_watered: bool
 var starting_day: int
 var current_day: int
+var current_state_index: int = 2
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
@@ -25,16 +27,22 @@ func on_time_tick_day(day: int) -> void:
 func growth_states(starting_day: int, current_day: int):
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		return
+	# Afisam lista sa vedem fiecare planta ce stadii are (valorile)
+	print("Growth state list", growth_states_list)
+	# Num states = numarul de stari al plantei
+	var num_states = growth_states_list.size()
 	
-	var num_states = 5
-	
+	# Calculam current_state_index, practic pozitia din lista care indica starea la care se afla planta
 	var growth_days_passed = (current_day - starting_day) % num_states
-	var state_index = growth_days_passed % num_states + 2
+	current_state_index = growth_days_passed % num_states + 2
 	
-	current_growth_state = state_index
+	# { "Seed": 0, "Harvesting": 1, "Sprout": 2, "Germination": 3, "Vegetative": 4, "Reproduction": 5, "Maturity": 6 }
+	# Salvam starea curenta la care se afla planta
+	current_growth_state = growth_states_list[current_state_index]
 	
-	var name = DataTypes.GrowthStates.keys()[current_growth_state]
-	print("Current growth state: ", name, " State index from asset", state_index)
+	var name = DataTypes.GrowthStates.keys()[growth_states_list[current_state_index]]
+	print("Stadiul actual al plantei: ", name, " Pozitie lista: ", current_state_index)
+	print("Pozitie din DataTypes: ", current_growth_state)
 	
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		crop_maturity.emit()
@@ -50,4 +58,5 @@ func harvest_state(starting_day: int, current_day: int) -> void:
 		crop_harvesting.emit()
 
 func get_current_growth_state() -> DataTypes.GrowthStates:
-	return current_growth_state
+	# Returnam index-ul din lista
+	return current_state_index

@@ -1,8 +1,9 @@
-[gd_scene load_steps=386 format=3 uid="uid://c73cg4mblr717"]
+[gd_scene load_steps=387 format=3 uid="uid://c73cg4mblr717"]
 
 [ext_resource type="Texture2D" uid="uid://d17b51nw13m4" path="res://assets/game/Characters/farming/axe.png" id="1_6ys1d"]
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_xccpj"]
 [ext_resource type="Texture2D" uid="uid://c7g4fefsgsdye" path="res://assets/game/Characters/basic/damage.png" id="2_b438w"]
+[ext_resource type="Resource" uid="uid://bci1b63anfiyu" path="res://scenes/objects/inventory/player_inventory.tres" id="2_kjvec"]
 [ext_resource type="Texture2D" uid="uid://byabqigu1klfm" path="res://assets/game/Characters/basic/idle.png" id="2_rek11"]
 [ext_resource type="Texture2D" uid="uid://crg6ku3jshprq" path="res://assets/game/Characters/basic/death.png" id="3_rfcy7"]
 [ext_resource type="Texture2D" uid="uid://dfx83as5h6ie7" path="res://assets/game/Characters/farming/hammer.png" id="4_gcdec"]
@@ -1547,11 +1548,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xqhy6")
 }],
-<<<<<<< HEAD
-"loop": false,
-=======
 "loop": true,
->>>>>>> a3dd13b (Final touch before presentation)
 "name": &"chopping_right",
 "speed": 8.0
 }, {
@@ -2838,11 +2835,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3r1d7")
 }],
-<<<<<<< HEAD
 "loop": false,
-=======
-"loop": true,
->>>>>>> a3dd13b (Final touch before presentation)
 "name": &"watering_right",
 "speed": 8.0
 }]
@@ -2853,28 +2846,20 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_eay71"]
 radius = 3.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_xccpj")
+inventory = ExtResource("2_kjvec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
-<<<<<<< HEAD
-animation = &"chopping_left"
-autoplay = "idle_front"
-frame = 5
-frame_progress = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-=======
-animation = &"hoe_front"
+animation = &"watering_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
->>>>>>> a3dd13b (Final touch before presentation)
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_lub8e")
 
@@ -2912,16 +2897,13 @@ hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisi
 [node name="HitComponent" parent="." instance=ExtResource("24_uv6il")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
-<<<<<<< HEAD
-=======
 visible = false
->>>>>>> a3dd13b (Final touch before presentation)
 position = Vector2(-13, -3)
 shape = SubResource("CircleShape2D_eay71")
 debug_color = Color(0.766222, 0.315245, 0.801636, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2, 2)
 limit_left = 22
 limit_top = 22
 limit_right = 1274

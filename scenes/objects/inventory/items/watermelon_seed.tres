@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bihalxvodxciy"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_l8m1e"]
+[ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="2_0k51j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twktf"]
+atlas = ExtResource("2_0k51j")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_l8m1e")
+name = "watermelon_seed"
+texture = SubResource("AtlasTexture_twktf")

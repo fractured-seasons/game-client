@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw3s5d3rpp61u"]
+
+[ext_resource type="Script" path="res://scenes/objects/plants/garlic.gd" id="1_2vph5"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="2_nvpka"]
+[ext_resource type="PackedScene" uid="uid://dpihtf6lkuco1" path="res://scenes/objects/plants/flowering_particles.tscn" id="2_xk1qs"]
+[ext_resource type="PackedScene" uid="uid://ort5yl360pwv" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="3_421p0"]
+[ext_resource type="PackedScene" uid="uid://c4c1okpsv8dud" path="res://scenes/objects/plants/watering_particles.tscn" id="3_dng28"]
+[ext_resource type="Texture2D" uid="uid://deubfdbmw6jt" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Garlic.png" id="4_pmdy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no1wj"]
+size = Vector2(6, 10)
+
+[node name="Garlic" type="Node2D"]
+script = ExtResource("1_2vph5")
+
+[node name="FloweringParticles" parent="." instance=ExtResource("2_xk1qs")]
+
+[node name="WateringParticles" parent="." instance=ExtResource("3_dng28")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_nvpka")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_no1wj")
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("3_421p0")]
+days_until_harvest = 5
+growth_states_list = Array[int]([0, 1, 2, 3, 6])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("4_pmdy2")
+hframes = 5
+frame = 4

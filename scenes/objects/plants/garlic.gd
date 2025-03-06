@@ -1,6 +1,6 @@
 extends Node2D
 
-var watermelon_harvest_scene = preload("res://scenes/objects/plants/watermelon_harvest.tscn")
+var sunflower_harvest_scene = preload("res://scenes/objects/plants/sunflower_harvest.tscn")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
@@ -8,6 +8,7 @@ var watermelon_harvest_scene = preload("res://scenes/objects/plants/watermelon_h
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
+
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -17,9 +18,11 @@ func _ready() -> void:
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 
+
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
 	sprite_2d.frame = growth_state
+	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
 
@@ -31,11 +34,13 @@ func on_hurt(hit_damage: int) -> void:
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
 
+
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
 
+
 func on_crop_harvesting() -> void:
-	var watermelon_harvest_instance = watermelon_harvest_scene.instantiate() as Node2D
-	watermelon_harvest_instance.global_position = global_position
-	get_parent().add_child(watermelon_harvest_instance)
+	var corn_harvest_instance = sunflower_harvest_scene.instantiate() as Node2D
+	corn_harvest_instance.global_position = global_position
+	get_parent().add_child(corn_harvest_instance)
 	queue_free()

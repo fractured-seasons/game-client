@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://d18uuvb4872ju"]
+[gd_scene load_steps=13 format=3 uid="uid://d18uuvb4872ju"]
 
 [ext_resource type="Theme" uid="uid://bm443e6xugnys" path="res://scenes/ui/game_ui_theme.tres" id="1_8im01"]
 [ext_resource type="Texture2D" uid="uid://3wu1xn4u32pd" path="res://assets/game/objects/Basic_tools_and_meterials.png" id="2_n1smd"]
 [ext_resource type="Script" path="res://scenes/ui/tools_panel.gd" id="2_yoom7"]
+[ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="4_nctxd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8ii4"]
 atlas = ExtResource("2_n1smd")
@@ -28,6 +29,10 @@ load_path = "res://.godot/imported/Basic_tools_and_meterials.png-81bb406a926ef25
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojqxr"]
 atlas = SubResource("CompressedTexture2D_qw2k8")
 region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lo4o"]
+atlas = ExtResource("4_nctxd")
+region = Rect2(16, 16, 16, 16)
 
 [node name="ToolsPanel" type="PanelContainer"]
 offset_right = 26.0
@@ -79,7 +84,10 @@ theme_type_variation = &"ToolButton"
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_0lo4o")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolLog" to="." method="_on_tool_log_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolLog3" to="." method="_on_tool_log_3_pressed"]

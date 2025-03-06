@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://dnb2w41o8yvdo"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_pr8es"]
+[ext_resource type="Texture2D" uid="uid://bc83tw6x1vui7" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Fall/Beetrot.png" id="2_doyf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p634d"]
+atlas = ExtResource("2_doyf4")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_pr8es")
+name = "BeetrootHarvest"
+texture = SubResource("AtlasTexture_p634d")

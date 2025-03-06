@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4p3mfnvnjp63"]
+
+[ext_resource type="Texture2D" uid="uid://bc83tw6x1vui7" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Fall/Beetrot.png" id="1_8kwsh"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_e6jr8"]
+[ext_resource type="Resource" uid="uid://dnb2w41o8yvdo" path="res://scenes/objects/inventory/items/BeetrootHarvest.tres" id="3_643yj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ql7w"]
+radius = 7.0
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(1, -14)
+texture = ExtResource("1_8kwsh")
+hframes = 5
+frame = 1
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_e6jr8")]
+collectable_name = "BeetrootHarvest"
+item = ExtResource("3_643yj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_3ql7w")

@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://b17keemnryonk"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_ui.gd" id="1_m0gax"]
+[ext_resource type="Texture2D" uid="uid://bu08shx5hcxm8" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Toolbar.png" id="2_188tu"]
+[ext_resource type="PackedScene" uid="uid://32l0l42ky22w" path="res://scenes/objects/inventory/inventory_slot.tscn" id="3_a0qvc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85wp1"]
+atlas = ExtResource("2_188tu")
+region = Rect2(246, 113, 36, 45)
+
+[node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(104, 61)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 104.0
+offset_bottom = 61.0
+mouse_default_cursor_shape = 5
+script = ExtResource("1_m0gax")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 104.0
+offset_bottom = 64.0
+mouse_filter = 0
+texture = SubResource("AtlasTexture_85wp1")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -28.0
+offset_right = 48.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+columns = 5
+
+[node name="inventory_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2

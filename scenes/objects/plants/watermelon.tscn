@@ -11,15 +11,19 @@
 size = Vector2(10.25, 7.25)
 
 [node name="Watermelon" type="Node2D"]
+top_level = true
+visibility_layer = 2
 script = ExtResource("1_lfi5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 texture = ExtResource("2_3i51t")
 hframes = 6
-frame = 2
+frame = 5
 
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("5_goh6l")]
+days_until_harvest = 6
+growth_states_list = Array[int]([0, 1, 2, 3, 4, 6])
 
 [node name="FloweringParticles" parent="." instance=ExtResource("3_se6n4")]
 
