@@ -16,7 +16,11 @@ func _ready():
 	update()
 
 func connectSlots():
-	for slot in slots:
+	for i in range(slots.size()):
+		var slot = slots[i]
+		slot.index = i
+		
+		
 		slot.pressed.connect(_onSlotClicked.bind(slot))
 
 func update():
@@ -42,10 +46,30 @@ func close():
 	visible = false
 	is_open = false
 	closed.emit()
+
+
 func _onSlotClicked(slot):
+	if slot.isEmpty() && itemInHand:
+		insertItemInSlot(slot)
+		return
+		
+	if !itemInHand:
+		takeItemFromSlot(slot)
+
+func takeItemFromSlot(slot):
 	print("yes")
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
+	updateItemInHand()
+
+func insertItemInSlot(slot):
+	var item = itemInHand
+	
+	remove_child(itemInHand)
+	itemInHand = null
+	
+	slot.insert(item)
+
 
 func updateItemInHand():
 	if !itemInHand: return
