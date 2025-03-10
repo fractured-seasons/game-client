@@ -7,6 +7,7 @@ extends Button
 var itemStackGUI: ItemStackGUI
 var index: int
 
+
 func insert(isg: ItemStackGUI):
 	itemStackGUI = isg
 	print("insert")
@@ -20,6 +21,8 @@ func insert(isg: ItemStackGUI):
 
 func takeItem():
 	var item = itemStackGUI
+	
+	inventory.removeSlot(itemStackGUI.inventorySlot)
 	
 	container.remove_child(itemStackGUI)
 	itemStackGUI = null

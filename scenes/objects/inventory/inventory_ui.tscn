@@ -20,13 +20,35 @@ script = ExtResource("1_m0gax")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_right = 104.0
-offset_bottom = 64.0
+offset_bottom = 73.0
 mouse_filter = 0
 texture = SubResource("AtlasTexture_85wp1")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 20.0
+
+[node name="inventory_slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot2" parent="NinePatchRect/HBoxContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot3" parent="NinePatchRect/HBoxContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot4" parent="NinePatchRect/HBoxContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
+
+[node name="inventory_slot5" parent="NinePatchRect/HBoxContainer" instance=ExtResource("3_a0qvc")]
+layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 1
@@ -36,28 +58,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = -28.0
+offset_top = -4.5
 offset_right = 48.0
-offset_bottom = 28.0
+offset_bottom = 32.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 16
 columns = 5
 
-[node name="inventory_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
 [node name="inventory_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
@@ -73,19 +95,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="inventory_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
-layout_mode = 2
-
-[node name="inventory_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
-layout_mode = 2
-
-[node name="inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
-layout_mode = 2
-
-[node name="inventory_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
-layout_mode = 2
-
-[node name="inventory_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
-layout_mode = 2
-
-[node name="inventory_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2

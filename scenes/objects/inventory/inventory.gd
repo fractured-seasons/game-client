@@ -7,7 +7,7 @@ signal updated
 @export var slots: Array[InventorySlot]
 
 func add_item_to_inventory(item: InventoryItem):
-	var item_slots = slots.filter(func(slot): return slot.item == item)
+	var item_slots = slots.filter(func(slot): return slot.item == item and slot.amount < item.maxAmountPrStack)
 	if !item_slots.is_empty():
 		# if item_slots[0].amount < max_stack:
 		item_slots[0].amount += 1
@@ -18,11 +18,13 @@ func add_item_to_inventory(item: InventoryItem):
 			empty_slots[0].amount = 1
 	updated.emit()
 
-func removeItemAtIndex(index: int):
+func removeSlot(inventorySlot: InventorySlot):
+	var index = slots.find(inventorySlot)
+	if index < 0: return
+	
 	slots[index] = InventorySlot.new()
+	updated.emit()
 
 func insertSlot(index: int, inventorySlot: InventorySlot):
-	var oldIndex: int = slots.find(inventorySlot)
-	removeItemAtIndex(oldIndex)
-	
 	slots[index] = inventorySlot
+	updated.emit()

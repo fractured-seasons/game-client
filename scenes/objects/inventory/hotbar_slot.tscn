@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://1131rbo5nlhy"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/hotbar_slot.gd" id="1_eqh7t"]
+[ext_resource type="Texture2D" uid="uid://bu08shx5hcxm8" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Toolbar.png" id="2_753s2"]
+[ext_resource type="PackedScene" uid="uid://i4dyxw0wavkb" path="res://scenes/objects/inventory/itemsStackGUI.tscn" id="3_3hdt2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in0u6"]
+atlas = ExtResource("2_753s2")
+region = Rect2(5, 149, 22, 22)
+
+[node name="HotbarSlot" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 6
+action_mode = 0
+script = ExtResource("1_eqh7t")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(0.727273, 0.727273)
+texture = SubResource("AtlasTexture_in0u6")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" parent="CenterContainer" instance=ExtResource("3_3hdt2")]
+layout_mode = 2
+
+[node name="IndexInv" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 15.0
+offset_bottom = 22.0
+scale = Vector2(0.35, 0.35)
+text = "2"

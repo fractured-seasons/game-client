@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://gjulxgpnl5ew"]
+[gd_scene load_steps=29 format=4 uid="uid://gjulxgpnl5ew"]
 
 [ext_resource type="PackedScene" uid="uid://b7sx3bvm432kn" path="res://scenes/components/field_cursor_component.tscn" id="1_4crw5"]
 [ext_resource type="PackedScene" uid="uid://cck0yvbioyckf" path="res://scenes/ui/game_screen.tscn" id="1_100vy"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bxq751niacqe8" path="res://scenes/objects/trees/large_tree.tscn" id="10_p4qrq"]
 [ext_resource type="Shader" path="res://scenes/objects/trees/tree_shake.gdshader" id="11_sm8jb"]
 [ext_resource type="PackedScene" uid="uid://dp5g4wgfr1n5t" path="res://scenes/objects/trees/small_tree.tscn" id="12_jmhxd"]
-[ext_resource type="PackedScene" uid="uid://cg18oyladgu3r" path="res://scenes/characters/cow/cow.tscn" id="14_d4l0m"]
 [ext_resource type="PackedScene" uid="uid://ck30yfk303gcj" path="res://scenes/characters/chicken/chicken.tscn" id="15_enyj4"]
 [ext_resource type="PackedScene" uid="uid://obmc1e0gb54p" path="res://scenes/objects/plants/wheat.tscn" id="15_i87wl"]
 
@@ -83,11 +82,6 @@ shader_parameter/hit_effect_intensity = 0.0
 vertices = PackedVector2Array(378.672, 100.742, 343.617, 40.4219, 528.648, 44.7813, 535.719, 145.453, 484.039, 202.383, 387.148, 168.602)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(369, 104, 378, 176, 487, 214, 546, 149, 538, 35, 326, 30)])
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jjytg"]
-vertices = PackedVector2Array(530.289, 407.969, 370.578, 416.844, 147.383, 279.422, 289.523, 277.039)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(292, 267, 113, 270, 368, 427, 566, 416)])
 
 [node name="TestSceneFullmap" type="Node2D"]
 position = Vector2(-20, -21)
@@ -227,8 +221,6 @@ y_sort_enabled = true
 [node name="Player" parent="EnvironmentalObjects" instance=ExtResource("2_81nwu")]
 position = Vector2(146, 177)
 
-[node name="Camera2D2" type="Camera2D" parent="EnvironmentalObjects/Player"]
-
 [node name="SummerTrees" type="Node2D" parent="EnvironmentalObjects"]
 y_sort_enabled = true
 position = Vector2(82, -12)
@@ -359,24 +351,6 @@ position = Vector2(483, 180)
 
 [node name="Chicken5" parent="Chickens" instance=ExtResource("15_enyj4")]
 position = Vector2(441, 165)
-
-[node name="Cows" type="Node2D" parent="."]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
-navigation_polygon = SubResource("NavigationPolygon_jjytg")
-navigation_layers = 2
-
-[node name="Cow" parent="Cows" instance=ExtResource("14_d4l0m")]
-position = Vector2(372, 397)
-
-[node name="Cow2" parent="Cows" instance=ExtResource("14_d4l0m")]
-position = Vector2(376, 366)
-
-[node name="Cow3" parent="Cows" instance=ExtResource("14_d4l0m")]
-position = Vector2(255, 299)
-
-[node name="Cow4" parent="Cows" instance=ExtResource("14_d4l0m")]
-position = Vector2(319, 324)
 
 [node name="Wheat" parent="." instance=ExtResource("15_i87wl")]
 position = Vector2(89, 151)
