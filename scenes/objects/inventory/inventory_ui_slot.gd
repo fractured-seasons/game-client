@@ -10,8 +10,6 @@ var index: int
 
 func insert(isg: ItemStackGUI):
 	itemStackGUI = isg
-	print("insert")
-	# backgroundSprite.visible = true
 	container.add_child(itemStackGUI)
 	
 	if !itemStackGUI.inventorySlot || inventory.slots[index] == itemStackGUI.inventorySlot:
@@ -24,11 +22,12 @@ func takeItem():
 	
 	inventory.removeSlot(itemStackGUI.inventorySlot)
 	
-	container.remove_child(itemStackGUI)
-	itemStackGUI = null
-	print("removing")
-	
 	return item
 
 func isEmpty():
 	return !itemStackGUI
+
+func clear() -> void:
+	if itemStackGUI:
+		container.remove_child(itemStackGUI)
+		itemStackGUI = null

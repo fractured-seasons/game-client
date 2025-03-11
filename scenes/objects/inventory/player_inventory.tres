@@ -1,74 +1,68 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=19 format=3 uid="uid://bci1b63anfiyu"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=18 format=3 uid="uid://bci1b63anfiyu"]
 
 [ext_resource type="Script" path="res://scenes/objects/inventory/inventory_slot.gd" id="2_5xmev"]
-[ext_resource type="Resource" uid="uid://dnb2w41o8yvdo" path="res://scenes/objects/inventory/items/BeetrootHarvest.tres" id="3_3fqrn"]
 [ext_resource type="Script" path="res://scenes/objects/inventory/inventory.gd" id="3_18rli"]
 
-[sub_resource type="Resource" id="Resource_q8qm8"]
-script = ExtResource("2_5xmev")
-item = ExtResource("3_3fqrn")
-amount = 62
-
-[sub_resource type="Resource" id="Resource_3w3xn"]
-script = ExtResource("2_5xmev")
-item = ExtResource("3_3fqrn")
-amount = 5
-
-[sub_resource type="Resource" id="Resource_712yy"]
-script = ExtResource("2_5xmev")
-item = ExtResource("3_3fqrn")
-amount = 10
-
-[sub_resource type="Resource" id="Resource_j2t22"]
-script = ExtResource("2_5xmev")
-item = ExtResource("3_3fqrn")
-amount = 56
-
-[sub_resource type="Resource" id="Resource_73vdg"]
-script = ExtResource("2_5xmev")
-item = ExtResource("3_3fqrn")
-amount = 26
-
-[sub_resource type="Resource" id="Resource_gg2sc"]
+[sub_resource type="Resource" id="Resource_aeg2x"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_n6tiv"]
+[sub_resource type="Resource" id="Resource_ygu7a"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_lbtn5"]
+[sub_resource type="Resource" id="Resource_srf2f"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_xhqyb"]
+[sub_resource type="Resource" id="Resource_mbj38"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_ydgyq"]
+[sub_resource type="Resource" id="Resource_ua70f"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_tjkiw"]
+[sub_resource type="Resource" id="Resource_n3u4w"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_42s18"]
+[sub_resource type="Resource" id="Resource_16www"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_vrlc7"]
+[sub_resource type="Resource" id="Resource_iql0h"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_ffexk"]
+[sub_resource type="Resource" id="Resource_b2iip"]
 script = ExtResource("2_5xmev")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_fqtak"]
+[sub_resource type="Resource" id="Resource_lel60"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_uasma"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_m2rxy"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_6hr31"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_bw56h"]
+script = ExtResource("2_5xmev")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qd8kw"]
 script = ExtResource("2_5xmev")
 amount = 0
 
 [resource]
 script = ExtResource("3_18rli")
-slots = Array[ExtResource("2_5xmev")]([SubResource("Resource_q8qm8"), SubResource("Resource_3w3xn"), SubResource("Resource_712yy"), SubResource("Resource_j2t22"), SubResource("Resource_73vdg"), SubResource("Resource_gg2sc"), SubResource("Resource_n6tiv"), SubResource("Resource_lbtn5"), SubResource("Resource_xhqyb"), SubResource("Resource_ydgyq"), SubResource("Resource_tjkiw"), SubResource("Resource_42s18"), SubResource("Resource_vrlc7"), SubResource("Resource_ffexk"), SubResource("Resource_fqtak")])
+slots = Array[ExtResource("2_5xmev")]([SubResource("Resource_aeg2x"), SubResource("Resource_ygu7a"), SubResource("Resource_srf2f"), SubResource("Resource_mbj38"), SubResource("Resource_ua70f"), SubResource("Resource_n3u4w"), SubResource("Resource_16www"), SubResource("Resource_iql0h"), SubResource("Resource_b2iip"), SubResource("Resource_lel60"), SubResource("Resource_uasma"), SubResource("Resource_m2rxy"), SubResource("Resource_6hr31"), SubResource("Resource_bw56h"), SubResource("Resource_qd8kw")])

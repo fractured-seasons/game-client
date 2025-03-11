@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://gjulxgpnl5ew"]
+[gd_scene load_steps=30 format=4 uid="uid://gjulxgpnl5ew"]
 
 [ext_resource type="PackedScene" uid="uid://b7sx3bvm432kn" path="res://scenes/components/field_cursor_component.tscn" id="1_4crw5"]
 [ext_resource type="PackedScene" uid="uid://cck0yvbioyckf" path="res://scenes/ui/game_screen.tscn" id="1_100vy"]
@@ -17,8 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://ck30yfk303gcj" path="res://scenes/characters/chicken/chicken.tscn" id="15_enyj4"]
 [ext_resource type="PackedScene" uid="uid://obmc1e0gb54p" path="res://scenes/objects/plants/wheat.tscn" id="15_i87wl"]
 [ext_resource type="PackedScene" uid="uid://bpi4ry1yqdwj6" path="res://scenes/objects/plants/axe.tscn" id="17_ic31q"]
-[ext_resource type="PackedScene" uid="uid://dlk23y7p8f6bk" path="res://scenes/objects/plants/watering_can_droppable_item.tscn" id="18_v2blf"]
-[ext_resource type="PackedScene" uid="uid://c4p3mfnvnjp63" path="res://scenes/objects/plants/beetroot_harvest.tscn" id="19_xtx1a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gtul"]
 distance = 24.0
@@ -363,57 +361,3 @@ position = Vector2(105, 151)
 
 [node name="Axe" parent="." instance=ExtResource("17_ic31q")]
 position = Vector2(163, 192)
-
-[node name="WaterCrops" parent="." instance=ExtResource("18_v2blf")]
-position = Vector2(193, 196)
-
-[node name="Sprite2D" parent="." instance=ExtResource("19_xtx1a")]
-position = Vector2(158, 205)
-
-[node name="Sprite2D2" parent="." instance=ExtResource("19_xtx1a")]
-position = Vector2(156, 226)
-
-[node name="Sprite2D3" parent="." instance=ExtResource("19_xtx1a")]
-position = Vector2(187, 211)
-
-[node name="Sprite2D4" parent="." instance=ExtResource("19_xtx1a")]
-position = Vector2(185, 232)
-
-[node name="Axe2" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(128, 251)
-
-[node name="Axe3" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(101, 252)
-
-[node name="Axe4" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(75, 253)
-
-[node name="Axe5" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(74, 273)
-
-[node name="Axe6" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(103, 274)
-
-[node name="Axe7" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(128, 274)
-
-[node name="Axe8" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(156, 276)
-
-[node name="Axe9" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(158, 251)
-
-[node name="Axe10" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(184, 255)
-
-[node name="Axe11" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(184, 277)
-
-[node name="Axe12" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(205, 258)
-
-[node name="Axe13" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(208, 277)
-
-[node name="Axe14" parent="." instance=ExtResource("17_ic31q")]
-position = Vector2(209, 237)

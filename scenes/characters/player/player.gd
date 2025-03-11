@@ -2,7 +2,6 @@ class_name Player
 extends CharacterBody2D
 
 @onready var hit_component: HitComponent = $HitComponent
-
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 @export var inventory: Inventory
 
@@ -16,4 +15,4 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 	hit_component.current_tool = tool
 
 func collect(item: InventoryItem):
-	inventory.add_item_to_inventory(item)
+	return inventory.add_item_to_inventory(item)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpi4ry1yqdwj6"]
+
+[ext_resource type="Texture2D" uid="uid://cbsofmsnuhlwe" path="res://assets/game/misc.png" id="1_5nosr"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_g8qub"]
+[ext_resource type="Resource" uid="uid://rxmbt46ue0m0" path="res://scenes/objects/inventory/items/AxeWood.tres" id="3_qnyac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jqlt"]
+atlas = ExtResource("1_5nosr")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20bma"]
+radius = 8.0
+
+[node name="Axe" type="Sprite2D"]
+texture = SubResource("AtlasTexture_5jqlt")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_g8qub")]
+collectable_name = "Axe"
+item = ExtResource("3_qnyac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_20bma")

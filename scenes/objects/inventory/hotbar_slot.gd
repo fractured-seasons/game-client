@@ -5,14 +5,14 @@ extends Button
 @onready var indexinv: Label = $IndexInv
 
 func update_to_slot(slot: InventorySlot, index: int):
+	index += 1
+	indexinv.text = str(index)
+	
 	if !slot.item:
 		item_stack_gui.visible = false
-		# background_sprite.frame = 0
 		return
 	
 	item_stack_gui.inventorySlot = slot
 	item_stack_gui.update()
 	item_stack_gui.visible = true
 	
-	index += 1
-	indexinv.text = str(index)

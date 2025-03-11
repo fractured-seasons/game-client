@@ -67,19 +67,19 @@ mouse_filter = 0
 mouse_default_cursor_shape = 16
 columns = 5
 
-[node name="inventory_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
-[node name="inventory_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
+[node name="inventory_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]
 layout_mode = 2
 
 [node name="inventory_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_a0qvc")]

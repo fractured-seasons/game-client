@@ -11,3 +11,4 @@ region = Rect2(16, 16, 16, 16)
 script = ExtResource("1_pr8es")
 name = "BeetrootHarvest"
 texture = SubResource("AtlasTexture_p634d")
+maxAmountPrStack = 64

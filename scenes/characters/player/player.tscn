@@ -1548,7 +1548,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xqhy6")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_right",
 "speed": 8.0
 }, {
@@ -2855,7 +2855,7 @@ inventory = ExtResource("2_kjvec")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
-animation = &"watering_right"
+animation = &"chopping_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

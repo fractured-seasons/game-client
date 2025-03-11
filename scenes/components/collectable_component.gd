@@ -10,5 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Collected")
 		player = body
-		player.collect(item)
-		get_parent().queue_free()
+		if player.collect(item):
+			get_parent().queue_free()
+		else:
+			print("Inventory ful")

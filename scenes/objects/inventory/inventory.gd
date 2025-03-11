@@ -3,28 +3,53 @@ extends Resource
 class_name Inventory
 
 signal updated
-# var max_stack: int = 64
 @export var slots: Array[InventorySlot]
 
-func add_item_to_inventory(item: InventoryItem):
+func add_item_to_inventory(item: InventoryItem) -> bool:
 	var item_slots = slots.filter(func(slot): return slot.item == item and slot.amount < item.maxAmountPrStack)
+	
 	if !item_slots.is_empty():
-		# if item_slots[0].amount < max_stack:
 		item_slots[0].amount += 1
 	else:
 		var empty_slots = slots.filter(func(slot): return slot.item == null)
 		if !empty_slots.is_empty():
 			empty_slots[0].item = item
 			empty_slots[0].amount = 1
+		else:
+			# Inventarul este plin
+			return false
 	updated.emit()
-
+	return true
+	
 func removeSlot(inventorySlot: InventorySlot):
 	var index = slots.find(inventorySlot)
 	if index < 0: return
-	
+	remove_at_index(index)
+
+func remove_at_index(index: int) -> void:
 	slots[index] = InventorySlot.new()
 	updated.emit()
+
 
 func insertSlot(index: int, inventorySlot: InventorySlot):
 	slots[index] = inventorySlot
 	updated.emit()
+
+func use_item_at_index(index: int) -> void:
+	if index < 0 || index >= slots.size() || !slots[index].item:
+		ToolManager.select_tool(DataTypes.Tools.None)
+		return
+	
+	var slot = slots[index]
+	if slot.item.name in DataTypes.Tools.keys():
+		var weapon_name = slot.item.name
+		ToolManager.select_tool(DataTypes.Tools[weapon_name])
+	else:
+		ToolManager.select_tool(DataTypes.Tools.None)
+		if slot.amount > 1:
+			print("out")
+			slot.amount -= 1
+			updated.emit()
+			return
+
+		remove_at_index(index)

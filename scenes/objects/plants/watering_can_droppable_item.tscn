@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlk23y7p8f6bk"]
+
+[ext_resource type="Texture2D" uid="uid://cbsofmsnuhlwe" path="res://assets/game/misc.png" id="1_51k5g"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_ora7s"]
+[ext_resource type="Resource" uid="uid://bbw2530o6d56u" path="res://scenes/objects/inventory/items/WaterCrops.tres" id="3_jyrys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rtpo"]
+atlas = ExtResource("1_51k5g")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ighcg"]
+radius = 8.0
+
+[node name="WaterCrops" type="Sprite2D"]
+texture = SubResource("AtlasTexture_2rtpo")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_ora7s")]
+collectable_name = "WaterCrops"
+item = ExtResource("3_jyrys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_ighcg")

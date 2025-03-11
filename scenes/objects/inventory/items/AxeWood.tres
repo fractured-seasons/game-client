@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://rxmbt46ue0m0"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_0ywep"]
+[ext_resource type="Texture2D" uid="uid://cbsofmsnuhlwe" path="res://assets/game/misc.png" id="2_me2qx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1pjt"]
+atlas = ExtResource("2_me2qx")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_0ywep")
+name = "AxeWood"
+texture = SubResource("AtlasTexture_e1pjt")
+maxAmountPrStack = 1

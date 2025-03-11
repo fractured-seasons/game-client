@@ -11,3 +11,4 @@ region = Rect2(16, 16, 16, 16)
 script = ExtResource("1_buhjw")
 name = "WatermelonHarvest"
 texture = SubResource("AtlasTexture_3iyhb")
+maxAmountPrStack = 64
