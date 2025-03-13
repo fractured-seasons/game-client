@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://ctptv5yvj4hup"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_6oce8"]
+[ext_resource type="Texture2D" uid="uid://cbsofmsnuhlwe" path="res://assets/game/misc.png" id="2_r63um"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnh5i"]
+atlas = ExtResource("2_r63um")
+region = Rect2(112, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_6oce8")
+name = "TillGround"
+texture = SubResource("AtlasTexture_rnh5i")
+maxAmountPrStack = 1

@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=18 format=3 uid="uid://bci1b63anfiyu"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=20 format=3 uid="uid://bci1b63anfiyu"]
 
 [ext_resource type="Script" path="res://scenes/objects/inventory/inventory_slot.gd" id="2_5xmev"]
+[ext_resource type="Resource" uid="uid://ctptv5yvj4hup" path="res://scenes/objects/inventory/items/TillGround.tres" id="3_8ecn5"]
 [ext_resource type="Script" path="res://scenes/objects/inventory/inventory.gd" id="3_18rli"]
+[ext_resource type="Resource" uid="uid://vo11fve4gcg0" path="res://scenes/objects/inventory/items/PlantSunflower.tres" id="3_uyovn"]
 
 [sub_resource type="Resource" id="Resource_aeg2x"]
 script = ExtResource("2_5xmev")
@@ -9,7 +11,8 @@ amount = 0
 
 [sub_resource type="Resource" id="Resource_ygu7a"]
 script = ExtResource("2_5xmev")
-amount = 0
+item = ExtResource("3_uyovn")
+amount = 3
 
 [sub_resource type="Resource" id="Resource_srf2f"]
 script = ExtResource("2_5xmev")
@@ -61,7 +64,8 @@ amount = 0
 
 [sub_resource type="Resource" id="Resource_qd8kw"]
 script = ExtResource("2_5xmev")
-amount = 0
+item = ExtResource("3_8ecn5")
+amount = 1
 
 [resource]
 script = ExtResource("3_18rli")

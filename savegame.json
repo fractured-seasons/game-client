@@ -1,0 +1,75 @@
+{
+	"inventory": [
+		{
+			"amount": 1,
+			"item_name": "BeetrootHarvest",
+			"max_amount": 64,
+			"texture_data": {
+				"atlas_path": "res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Fall/Beetrot.png",
+				"is_atlas": true,
+				"region": {
+					"position": {
+						"x": 16,
+						"y": 16
+					},
+					"size": {
+						"x": 16,
+						"y": 16
+					}
+				}
+			}
+		},
+		{
+			"amount": 3,
+			"item_name": "PlantSunflower",
+			"max_amount": 64,
+			"texture_data": {
+				"atlas_path": "res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Sunflower.png",
+				"is_atlas": true,
+				"region": {
+					"position": {
+						"x": 0,
+						"y": 16
+					},
+					"size": {
+						"x": 16,
+						"y": 16
+					}
+				}
+			}
+		},
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		{
+			"amount": 1,
+			"item_name": "TillGround",
+			"max_amount": 1,
+			"texture_data": {
+				"atlas_path": "res://assets/game/misc.png",
+				"is_atlas": true,
+				"region": {
+					"position": {
+						"x": 112,
+						"y": 16
+					},
+					"size": {
+						"x": 16,
+						"y": 16
+					}
+				}
+			}
+		}
+	],
+	"x": 356.000122070313,
+	"y": 156
+}

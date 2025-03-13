@@ -1,0 +1,163 @@
+[gd_scene load_steps=18 format=3 uid="uid://d2347k13iiagv"]
+
+[ext_resource type="Script" path="res://shop_menu.gd" id="1_erejv"]
+[ext_resource type="Texture2D" uid="uid://bcq85s8la1u0m" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Buttons & Icons.png" id="2_qrgwm"]
+[ext_resource type="Texture2D" uid="uid://csorb4mi4fe8q" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Onion.png" id="3_8iaqi"]
+[ext_resource type="Texture2D" uid="uid://bmc1oicksx8pn" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Sunflower.png" id="3_tx6y2"]
+[ext_resource type="Texture2D" uid="uid://dq8a5drc26hgf" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Tomato.png" id="4_dmysh"]
+[ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="5_xoahq"]
+[ext_resource type="Texture2D" uid="uid://fcpcbybo2wip" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Health, Magic, Armour, Money Icons.png" id="6_wot12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2jle"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(304, 512, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh04j"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(304, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edu37"]
+atlas = ExtResource("3_8iaqi")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vctmi"]
+atlas = ExtResource("3_tx6y2")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjf5m"]
+atlas = ExtResource("4_dmysh")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt3jy"]
+atlas = ExtResource("5_xoahq")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nku58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edu37")
+}],
+"loop": true,
+"name": &"OnionSeeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vctmi")
+}],
+"loop": true,
+"name": &"SunflowerSeeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjf5m")
+}],
+"loop": true,
+"name": &"TomatoSeeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt3jy")
+}],
+"loop": true,
+"name": &"WatermelonSeeds",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qws0v"]
+atlas = ExtResource("6_wot12")
+region = Rect2(160, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7h5e"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(320, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5e2y"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(64, 448, 16, 16)
+
+[node name="ShopMenu" type="StaticBody2D"]
+script = ExtResource("1_erejv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 115.0
+offset_bottom = 85.0
+color = Color(0.466667, 0.329412, 0.447059, 1)
+
+[node name="LeftButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(23, 26)
+offset_left = 62.0
+offset_top = 58.0
+offset_right = 85.0
+offset_bottom = 84.0
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftButton"]
+position = Vector2(12.5, 13)
+scale = Vector2(1.03125, 1)
+texture = SubResource("AtlasTexture_k2jle")
+
+[node name="RightButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 92.0
+offset_top = 63.0
+offset_right = 111.0
+offset_bottom = 81.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RightButton"]
+position = Vector2(9, 9)
+texture = SubResource("AtlasTexture_rh04j")
+
+[node name="ShopItems" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, 53)
+scale = Vector2(2.0625, 2.0625)
+sprite_frames = SubResource("SpriteFrames_nku58")
+animation = &"WatermelonSeeds"
+
+[node name="Price" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 27.0
+offset_bottom = 55.0
+text = "15"
+horizontal_alignment = 2
+
+[node name="CoinSprite" type="Sprite2D" parent="."]
+position = Vector2(35, 45)
+scale = Vector2(1.21875, 1.3125)
+texture = SubResource("AtlasTexture_qws0v")
+
+[node name="SeedName" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 109.0
+offset_bottom = 28.0
+text = "Watermelon
+"
+
+[node name="BuyButton" type="Button" parent="."]
+self_modulate = Color(0.4761, 0.479665, 0.69, 0)
+offset_left = 74.0
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 54.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BuyButton"]
+z_index = 1
+position = Vector2(12, 9)
+scale = Vector2(0.96875, 1.03125)
+texture = SubResource("AtlasTexture_y7h5e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BuyButton"]
+position = Vector2(12, 11)
+scale = Vector2(1.96875, 1.9375)
+texture = SubResource("AtlasTexture_h5e2y")
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

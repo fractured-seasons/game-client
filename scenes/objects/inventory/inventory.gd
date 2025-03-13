@@ -6,7 +6,7 @@ signal updated
 @export var slots: Array[InventorySlot]
 
 func add_item_to_inventory(item: InventoryItem) -> bool:
-	var item_slots = slots.filter(func(slot): return slot.item == item and slot.amount < item.maxAmountPrStack)
+	var item_slots = slots.filter(func(slot): return slot.item and slot.item.name == item.name and slot.amount < item.maxAmountPrStack)
 	
 	if !item_slots.is_empty():
 		item_slots[0].amount += 1
@@ -43,6 +43,7 @@ func use_item_at_index(index: int) -> void:
 	var slot = slots[index]
 	if slot.item.name in DataTypes.Tools.keys():
 		var weapon_name = slot.item.name
+		
 		ToolManager.select_tool(DataTypes.Tools[weapon_name])
 	else:
 		ToolManager.select_tool(DataTypes.Tools.None)
@@ -53,3 +54,9 @@ func use_item_at_index(index: int) -> void:
 			return
 
 		remove_at_index(index)
+
+func return_slots():
+	return slots
+
+func loader():
+	updated.emit()

@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cck0yvbioyckf"]
+[gd_scene load_steps=6 format=3 uid="uid://cck0yvbioyckf"]
 
 [ext_resource type="PackedScene" uid="uid://b17keemnryonk" path="res://scenes/objects/inventory/inventory_ui.tscn" id="1_g3spw"]
 [ext_resource type="Script" path="res://scenes/ui/game_screen.gd" id="1_we7u8"]
 [ext_resource type="PackedScene" uid="uid://vquderfk2np1" path="res://scenes/objects/inventory/hotbar.tscn" id="2_dvbli"]
+[ext_resource type="PackedScene" uid="uid://cfsfcvjsqpdwx" path="res://scenes/ui/day_and_night_panel.tscn" id="2_h74g1"]
+[ext_resource type="PackedScene" uid="uid://b5aldf7x0w6ad" path="res://scenes/ui/coin_ui.tscn" id="5_4o22b"]
 
 [node name="GameScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_we7u8")
+
+[node name="DayAndNightPanel" parent="." instance=ExtResource("2_h74g1")]
+anchors_preset = -1
+anchor_top = 0.021
+anchor_bottom = 0.021
+offset_left = 5.0
+offset_top = 0.44
+offset_right = 107.0
+offset_bottom = 0.44
 
 [node name="Hotbar" parent="." instance=ExtResource("2_dvbli")]
 anchors_preset = 7
@@ -32,11 +43,17 @@ anchor_bottom = 0.5
 offset_left = -102.0
 offset_top = -65.0
 offset_right = 2.0
-offset_bottom = -4.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_default_cursor_shape = 7
+
+[node name="CoinUI" parent="." instance=ExtResource("5_4o22b")]
+offset_left = 418.0
+offset_top = 313.0
+offset_right = -134.0
+offset_bottom = -7.0
 
 [connection signal="closed" from="InventoryUI" to="." method="_on_inventory_ui_closed"]
 [connection signal="opened" from="InventoryUI" to="." method="_on_inventory_ui_opened"]

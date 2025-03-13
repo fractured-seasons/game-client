@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5aldf7x0w6ad"]
+
+[ext_resource type="Texture2D" uid="uid://fcpcbybo2wip" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Health, Magic, Armour, Money Icons.png" id="1_q3eec"]
+[ext_resource type="Script" path="res://scenes/ui/coin_ui.gd" id="1_yyjpi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isrvn"]
+atlas = ExtResource("1_q3eec")
+region = Rect2(160, 144, 16, 16)
+
+[node name="CoinUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -555.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyjpi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 44.0
+
+[node name="CoinSprite" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_isrvn")
+expand_mode = 2
+
+[node name="CoinAmount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "2232"

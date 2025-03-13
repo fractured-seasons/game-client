@@ -16,3 +16,6 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 
 func collect(item: InventoryItem):
 	return inventory.add_item_to_inventory(item)
+
+func player_shop_method():
+	pass

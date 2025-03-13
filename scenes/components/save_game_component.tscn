@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw3em1ymlu8ry"]
+
+[ext_resource type="Script" path="res://scenes/components/save_game_component.gd" id="1_xvg2u"]
+
+[node name="SaveGame" type="Node2D"]
+script = ExtResource("1_xvg2u")
+
+[node name="SaveGameButton" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 39.0
+
+[node name="LoadGameButton" type="Button" parent="."]
+offset_left = 68.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 38.0
+
+[connection signal="pressed" from="SaveGameButton" to="." method="save"]
+[connection signal="pressed" from="LoadGameButton" to="." method="load"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpocgxbte3ko2"]
+
+[ext_resource type="Texture2D" uid="uid://cbsofmsnuhlwe" path="res://assets/game/misc.png" id="1_jqr2e"]
+[ext_resource type="Script" path="res://scenes/test/shop.gd" id="1_rgngx"]
+[ext_resource type="PackedScene" uid="uid://d2347k13iiagv" path="res://scenes/test/shop_menu.tscn" id="3_ta6ep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pl41"]
+atlas = ExtResource("1_jqr2e")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7drhy"]
+radius = 22.0907
+
+[node name="Shop" type="Area2D"]
+light_mask = 2
+collision_mask = 2
+script = ExtResource("1_rgngx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5pl41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_7drhy")
+
+[node name="ShopMenu" parent="." instance=ExtResource("3_ta6ep")]
+position = Vector2(17, -47)
+
+[connection signal="body_entered" from="." to="." method="player_entered"]
+[connection signal="body_exited" from="." to="." method="player_exit"]

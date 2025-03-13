@@ -22,8 +22,6 @@ func connectSlots():
 	for i in range(slots.size()):
 		var slot = slots[i]
 		slot.index = i
-		
-		
 		slot.pressed.connect(_onSlotClicked.bind(slot))
 
 func update():

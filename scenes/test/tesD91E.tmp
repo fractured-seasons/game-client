@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://r2vbygwq10if"]
+[gd_scene load_steps=14 format=4 uid="uid://r2vbygwq10if"]
 
 [ext_resource type="PackedScene" uid="uid://bax6qberdoclk" path="res://scenes/components/save_level_data_component.tscn" id="1_ka0b1"]
 [ext_resource type="TileSet" uid="uid://bcjr3vuqivmcr" path="res://Tilesets/game_tile_set.tres" id="1_xejk8"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bo51r5jxcp54n" path="res://scenes/components/save_data_component.tscn" id="8_mh123"]
 [ext_resource type="Resource" uid="uid://s37n3lbdiol6" path="res://resources/tilemap_layer_data_resource.tres" id="9_n88b5"]
 [ext_resource type="PackedScene" uid="uid://c4p3mfnvnjp63" path="res://scenes/objects/plants/beetroot_harvest.tscn" id="9_ynqqk"]
-[ext_resource type="PackedScene" uid="uid://b5ajeceqe8xvr" path="res://scenes/test/shop_mascot.tscn" id="14_wloac"]
 
 [node name="TestSceneCropsFieldTilledDirt" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-33.0]
@@ -21,6 +20,8 @@ metadata/_edit_horizontal_guides_ = [-33.0]
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("1_ka0b1")]
 
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("2_mlqj2")]
+
+[node name="GameScreen" parent="." instance=ExtResource("5_snnur")]
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("5_rrhvr")]
 grass_tilemap_layer = NodePath("../GameTilemap/SummverGrass")
@@ -34,11 +35,9 @@ terrain = 3
 
 [node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("2_1qcd7")]
 script = ExtResource("3_qjb2u")
-tilled_soil_tilemap_layer = NodePath("../GameTilemap/Dirt")
+tilled_soil_tilemap_layer = NodePath("../GameTilemap/TilledDirt")
 
 [node name="CropFields" type="Node2D" parent="."]
-
-[node name="GameScreen" parent="." instance=ExtResource("5_snnur")]
 
 [node name="GameTilemap" type="Node2D" parent="."]
 
@@ -49,6 +48,9 @@ tile_set = ExtResource("1_xejk8")
 [node name="Dirt" type="TileMapLayer" parent="GameTilemap"]
 tile_map_data = PackedByteArray("AAANAAUADAABAAEAAAANAAYADAABAAEAAAAOAAYADAABAAEAAAAOAAcADAABAAEAAAAPAAcADAABAAEAAAAQAAgADAABAAEAAAARAAkADAABAAEAAAASAAoADAABAAEAAAASAAsADAABAAEAAAATAAsADAABAAEAAAATAAwADAABAAEAAAAUAAwADAABAAEAAAAVAAwADAABAAEAAAAWAAsADAABAAEAAAAWAAoADAABAAEAAAAVAAoADAABAAEAAAAVAAkADAABAAEAAAAVAAgADAABAAEAAAAUAAgADAABAAEAAAAUAAcADAABAAEAAAATAAcADAABAAEAAAATAAYADAABAAEAAAASAAYADAABAAEAAAARAAYADAABAAEAAAARAAUADAABAAEAAAAQAAUADAABAAEAAAAPAAUADAABAAEAAAAOAAUADAABAAEAAAAPAAYADAABAAEAAAAQAAcADAABAAEAAAARAAcADAABAAEAAAARAAgADAABAAEAAAASAAgADAABAAEAAAATAAgADAABAAEAAAAUAAkADAABAAEAAAAQAAYADAABAAEAAAASAAcADAABAAEAAAATAAkADAABAAEAAAASAAkADAABAAEAAAAUAAoADAABAAEAAAATAAoADAABAAEAAAAUAAsADAABAAEAAAAVAAsADAABAAEAAAANAAsAFAAEAAAAAAANAAwAFAAEAAAAAAAMAAwAFAAEAAAAAAANAA0AFAAEAAAAAAAMAAsAFAAEAAAAAAALAAsAFAAEAAAAAAAMAA0AFAAEAAAAAAALAA0AFAAEAAAAAAALAAwAFAAEAAAAAAA=")
 tile_set = ExtResource("1_xejk8")
+
+[node name="SaveDataComponent" parent="GameTilemap/Dirt" instance=ExtResource("8_mh123")]
+save_data_resource = ExtResource("9_n88b5")
 
 [node name="TilledDirt" type="TileMapLayer" parent="GameTilemap"]
 tile_set = ExtResource("1_xejk8")
@@ -82,6 +84,3 @@ position = Vector2(83, 177)
 
 [node name="Sprite2D4" parent="." instance=ExtResource("9_ynqqk")]
 position = Vector2(119, 173)
-
-[node name="ShopMascot" parent="." instance=ExtResource("14_wloac")]
-position = Vector2(119, 104)
