@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhmavtr3ra1c5"]
+[gd_scene load_steps=8 format=3 uid="uid://dhmavtr3ra1c5"]
 
 [ext_resource type="Texture2D" uid="uid://bmc1oicksx8pn" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Sunflower.png" id="1_bwcl7"]
 [ext_resource type="PackedScene" uid="uid://dpihtf6lkuco1" path="res://scenes/objects/plants/flowering_particles.tscn" id="1_ggnvx"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c4c1okpsv8dud" path="res://scenes/objects/plants/watering_particles.tscn" id="2_c0orr"]
 [ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="2_lqkjk"]
 [ext_resource type="PackedScene" uid="uid://ort5yl360pwv" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="2_vnri6"]
-[ext_resource type="PackedScene" uid="uid://bo51r5jxcp54n" path="res://scenes/components/save_data_component.tscn" id="7_2eapf"]
-[ext_resource type="Resource" uid="uid://b7k36yn8o7nn" path="res://resources/scene_data_resource.tres" id="8_jg7j8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt21d"]
 size = Vector2(8.15625, 3.375)
@@ -15,6 +13,7 @@ size = Vector2(8.15625, 3.375)
 [node name="Sunflower" type="Node2D"]
 top_level = true
 y_sort_enabled = true
+position = Vector2(-1, -2)
 script = ExtResource("1_gmyc7")
 
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("2_vnri6")]
@@ -38,6 +37,3 @@ tool = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_gt21d")
-
-[node name="SaveDataComponent" parent="." instance=ExtResource("7_2eapf")]
-save_data_resource = ExtResource("8_jg7j8")

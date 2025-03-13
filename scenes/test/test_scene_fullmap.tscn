@@ -182,31 +182,31 @@ tile_set = ExtResource("1_cy12q")
 [node name="Crops" type="Node2D" parent="."]
 
 [node name="Sunflower" parent="Crops" instance=ExtResource("5_trcpk")]
-position = Vector2(39, 154)
+position = Vector2(35, 147)
 
 [node name="Sunflower6" parent="Crops" instance=ExtResource("5_trcpk")]
-position = Vector2(55, 154)
+position = Vector2(51, 148)
 
 [node name="Sunflower7" parent="Crops" instance=ExtResource("5_trcpk")]
-position = Vector2(55, 169)
+position = Vector2(51, 164)
 
 [node name="Sunflower8" parent="Crops" instance=ExtResource("5_trcpk")]
-position = Vector2(71, 153)
+position = Vector2(67, 147)
 
 [node name="Watermelon" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(72, 169)
+position = Vector2(68, 162)
 
 [node name="Watermelon5" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(71, 185)
+position = Vector2(69, 179)
 
 [node name="Watermelon6" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(88, 169)
+position = Vector2(84, 163)
 
 [node name="Watermelon2" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(88, 185)
+position = Vector2(85, 179)
 
 [node name="Watermelon3" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(56, 185)
+position = Vector2(35, 179)
 
 [node name="Sunflower2" parent="Crops" instance=ExtResource("5_trcpk")]
 position = Vector2(39, 201)
@@ -221,7 +221,7 @@ position = Vector2(87, 201)
 position = Vector2(103, 184)
 
 [node name="Watermelon4" parent="Crops" instance=ExtResource("4_bs4mv")]
-position = Vector2(40, 169)
+position = Vector2(36, 163)
 
 [node name="Sunflower4" parent="Crops" instance=ExtResource("5_trcpk")]
 position = Vector2(103, 169)

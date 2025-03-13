@@ -1,9 +1,48 @@
-[gd_scene load_steps=13 format=3 uid="uid://d18uuvb4872ju"]
+[gd_scene load_steps=13 format=3 uid="uid://bk4vdfd2u4c1u"]
 
 [ext_resource type="Theme" uid="uid://bm443e6xugnys" path="res://scenes/ui/game_ui_theme.tres" id="1_8im01"]
 [ext_resource type="Texture2D" uid="uid://3wu1xn4u32pd" path="res://assets/game/objects/Basic_tools_and_meterials.png" id="2_n1smd"]
-[ext_resource type="Script" path="res://scenes/ui/tools_panel.gd" id="2_yoom7"]
 [ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="4_nctxd"]
+
+[sub_resource type="GDScript" id="GDScript_dx85j"]
+script/source = "extends PanelContainer
+@onready var tool_tilling: Button = $MarginContainer/HBoxContainer/ToolTilling
+@onready var tool_watering: Button = $MarginContainer/HBoxContainer/ToolWatering
+@onready var tool_log: Button = $MarginContainer/HBoxContainer/ToolLog
+@onready var tool_log_2: Button = $MarginContainer/HBoxContainer/ToolLog2
+@onready var tool_log_3: Button = $MarginContainer/HBoxContainer/ToolLog3
+@onready var tool_axe: Button = $MarginContainer/HBoxContainer/ToolAxe
+
+
+func _on_tool_axe_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.AxeWood)
+
+
+func _on_tool_tilling_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.TillGround)
+
+
+func _on_tool_watering_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+func _on_tool_log_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.PlantSunflower)
+
+func _on_tool_log_3_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.PlantWatermelon)
+
+func _input(event: InputEvent) -> void:
+	_choose_tool(event)
+
+func _choose_tool(event: InputEvent) -> void:
+	if Input.is_action_just_pressed(\"first_tool\"):
+		ToolManager.select_tool(DataTypes.Tools.AxeWood)
+	elif Input.is_action_just_pressed(\"second_tool\"):
+		ToolManager.select_tool(DataTypes.Tools.TillGround)
+	elif Input.is_action_just_pressed(\"third_tool\"):
+		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+	elif Input.is_action_just_pressed(\"forth_tool\"):
+		ToolManager.select_tool(DataTypes.Tools.PlantSunflower)
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8ii4"]
 atlas = ExtResource("2_n1smd")
@@ -39,7 +78,7 @@ offset_right = 26.0
 offset_bottom = 26.0
 theme = ExtResource("1_8im01")
 theme_type_variation = &"DarkWoodPanel"
-script = ExtResource("2_yoom7")
+script = SubResource("GDScript_dx85j")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

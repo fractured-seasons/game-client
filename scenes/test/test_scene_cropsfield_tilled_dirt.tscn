@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://r2vbygwq10if"]
+[gd_scene load_steps=16 format=4 uid="uid://r2vbygwq10if"]
 
 [ext_resource type="PackedScene" uid="uid://bax6qberdoclk" path="res://scenes/components/save_level_data_component.tscn" id="1_ka0b1"]
 [ext_resource type="TileSet" uid="uid://bcjr3vuqivmcr" path="res://Tilesets/game_tile_set.tres" id="1_xejk8"]
@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bo51r5jxcp54n" path="res://scenes/components/save_data_component.tscn" id="8_mh123"]
 [ext_resource type="Resource" uid="uid://s37n3lbdiol6" path="res://resources/tilemap_layer_data_resource.tres" id="9_n88b5"]
 [ext_resource type="PackedScene" uid="uid://c4p3mfnvnjp63" path="res://scenes/objects/plants/beetroot_harvest.tscn" id="9_ynqqk"]
-[ext_resource type="PackedScene" uid="uid://b5ajeceqe8xvr" path="res://scenes/test/shop_mascot.tscn" id="14_wloac"]
+[ext_resource type="PackedScene" uid="uid://dpocgxbte3ko2" path="res://scenes/test/shop.tscn" id="14_wloac"]
+[ext_resource type="PackedScene" uid="uid://dhmavtr3ra1c5" path="res://scenes/objects/plants/sunflower.tscn" id="15_6q1pu"]
 
 [node name="TestSceneCropsFieldTilledDirt" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-33.0]
@@ -83,5 +84,8 @@ position = Vector2(83, 177)
 [node name="Sprite2D4" parent="." instance=ExtResource("9_ynqqk")]
 position = Vector2(119, 173)
 
-[node name="ShopMascot" parent="." instance=ExtResource("14_wloac")]
-position = Vector2(119, 104)
+[node name="Sunflower" parent="." instance=ExtResource("15_6q1pu")]
+position = Vector2(183, 183)
+
+[node name="Shop" parent="." instance=ExtResource("14_wloac")]
+position = Vector2(150, 144)

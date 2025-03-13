@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7sx3bvm432kn"]
+[gd_scene load_steps=4 format=3 uid="uid://b7sx3bvm432kn"]
 
 [ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="1_iy722"]
+[ext_resource type="Texture2D" uid="uid://co4igw6ugd6fa" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Cursors & Pointers.png" id="2_83krm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fptf"]
+atlas = ExtResource("2_83krm")
+region = Rect2(64, 0, 32, 32)
 
 [node name="FieldCursorComponent" type="Node"]
 script = ExtResource("1_iy722")
+
+[node name="Selector" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_8fptf")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2347k13iiagv"]
+[gd_scene load_steps=21 format=3 uid="uid://d2347k13iiagv"]
 
 [ext_resource type="Script" path="res://shop_menu.gd" id="1_erejv"]
 [ext_resource type="Texture2D" uid="uid://bcq85s8la1u0m" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Buttons & Icons.png" id="2_qrgwm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dq8a5drc26hgf" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Tomato.png" id="4_dmysh"]
 [ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="5_xoahq"]
 [ext_resource type="Texture2D" uid="uid://fcpcbybo2wip" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Health, Magic, Armour, Money Icons.png" id="6_wot12"]
+[ext_resource type="Theme" uid="uid://bm443e6xugnys" path="res://scenes/ui/game_ui_theme.tres" id="8_nchil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2jle"]
 atlas = ExtResource("2_qrgwm")
@@ -71,93 +72,143 @@ animations = [{
 atlas = ExtResource("6_wot12")
 region = Rect2(160, 144, 16, 16)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3ftxg"]
+font_size = 14
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7h5e"]
 atlas = ExtResource("2_qrgwm")
-region = Rect2(320, 64, 16, 16)
+region = Rect2(352, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5e2y"]
 atlas = ExtResource("2_qrgwm")
 region = Rect2(64, 448, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_755if"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(432, 64, 16, 16)
+
 [node name="ShopMenu" type="StaticBody2D"]
 script = ExtResource("1_erejv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 115.0
-offset_bottom = 85.0
-color = Color(0.466667, 0.329412, 0.447059, 1)
+[node name="Panel" type="PanelContainer" parent="."]
+offset_top = 7.0
+offset_right = 199.0
+offset_bottom = 102.0
+theme = ExtResource("8_nchil")
+theme_type_variation = &"DarkWoodPanel"
 
 [node name="LeftButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(23, 26)
-offset_left = 62.0
-offset_top = 58.0
-offset_right = 85.0
-offset_bottom = 84.0
+offset_left = 69.0
+offset_top = 69.0
+offset_right = 92.0
+offset_bottom = 95.0
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftButton"]
-position = Vector2(12.5, 13)
+position = Vector2(12, 13)
 scale = Vector2(1.03125, 1)
 texture = SubResource("AtlasTexture_k2jle")
 
 [node name="RightButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 92.0
-offset_top = 63.0
-offset_right = 111.0
-offset_bottom = 81.0
+z_index = 1
+offset_left = 102.0
+offset_top = 72.0
+offset_right = 121.0
+offset_bottom = 90.0
 
 [node name="Sprite2D" type="Sprite2D" parent="RightButton"]
-position = Vector2(9, 9)
+z_index = 1
+position = Vector2(11, 9)
 texture = SubResource("AtlasTexture_rh04j")
 
 [node name="ShopItems" type="AnimatedSprite2D" parent="."]
-position = Vector2(28, 53)
-scale = Vector2(2.0625, 2.0625)
+z_index = 1
+position = Vector2(94, 37)
+scale = Vector2(2.0625, 2)
 sprite_frames = SubResource("SpriteFrames_nku58")
 animation = &"WatermelonSeeds"
 
 [node name="Price" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 32.0
-offset_right = 27.0
-offset_bottom = 55.0
+z_index = 1
+offset_left = 18.0
+offset_top = 70.0
+offset_right = 38.0
+offset_bottom = 93.0
+text = "15"
+horizontal_alignment = 2
+
+[node name="SellPrice" type="Label" parent="."]
+z_index = 1
+offset_left = 133.0
+offset_top = 71.0
+offset_right = 153.0
+offset_bottom = 94.0
 text = "15"
 horizontal_alignment = 2
 
 [node name="CoinSprite" type="Sprite2D" parent="."]
-position = Vector2(35, 45)
+z_index = 1
+position = Vector2(49, 82)
+scale = Vector2(1.21875, 1.3125)
+texture = SubResource("AtlasTexture_qws0v")
+
+[node name="CoinSprite2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(164, 83)
 scale = Vector2(1.21875, 1.3125)
 texture = SubResource("AtlasTexture_qws0v")
 
 [node name="SeedName" type="Label" parent="."]
+z_index = 1
 offset_left = 13.0
-offset_top = 5.0
-offset_right = 109.0
-offset_bottom = 28.0
-text = "Watermelon
-"
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 38.0
+text = "Onion"
+label_settings = SubResource("LabelSettings_3ftxg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="."]
 self_modulate = Color(0.4761, 0.479665, 0.69, 0)
-offset_left = 74.0
-offset_top = 35.0
-offset_right = 100.0
-offset_bottom = 54.0
+z_index = 1
+offset_left = 25.0
+offset_top = 53.0
+offset_right = 49.0
+offset_bottom = 72.0
 
 [node name="Sprite2D" type="Sprite2D" parent="BuyButton"]
-z_index = 1
+z_index = 2
 position = Vector2(12, 9)
-scale = Vector2(0.96875, 1.03125)
+scale = Vector2(0.742187, 0.664063)
 texture = SubResource("AtlasTexture_y7h5e")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BuyButton"]
-position = Vector2(12, 11)
-scale = Vector2(1.96875, 1.9375)
+position = Vector2(12, 10)
+scale = Vector2(1.46484, 1.32812)
 texture = SubResource("AtlasTexture_h5e2y")
+
+[node name="SellButton" type="Button" parent="."]
+self_modulate = Color(0.4761, 0.479665, 0.69, 0)
+z_index = 1
+offset_left = 138.0
+offset_top = 51.0
+offset_right = 163.0
+offset_bottom = 70.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="SellButton"]
+position = Vector2(15, 11)
+scale = Vector2(1.46484, 1.32812)
+texture = SubResource("AtlasTexture_h5e2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="SellButton"]
+position = Vector2(15, 10)
+scale = Vector2(0.75, 0.8125)
+texture = SubResource("AtlasTexture_755if")
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="SellButton" to="." method="sell"]
