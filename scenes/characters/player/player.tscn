@@ -1,11 +1,13 @@
-[gd_scene load_steps=387 format=3 uid="uid://c73cg4mblr717"]
+[gd_scene load_steps=398 format=3 uid="uid://c73cg4mblr717"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_xccpj"]
 [ext_resource type="Texture2D" uid="uid://c7g4fefsgsdye" path="res://assets/game/Characters/basic/damage.png" id="2_b438w"]
 [ext_resource type="Resource" uid="uid://bci1b63anfiyu" path="res://scenes/objects/inventory/player_inventory.tres" id="2_kjvec"]
 [ext_resource type="Texture2D" uid="uid://byabqigu1klfm" path="res://assets/game/Characters/basic/idle.png" id="2_rek11"]
+[ext_resource type="Shader" path="res://scenes/objects/plants/Crops.gdshader" id="3_qu2cq"]
 [ext_resource type="Texture2D" uid="uid://crg6ku3jshprq" path="res://assets/game/Characters/basic/death.png" id="3_rfcy7"]
 [ext_resource type="Texture2D" uid="uid://c7yj1ufmp5oc7" path="res://assets/Character Animations/farming/axe.png" id="3_stgns"]
+[ext_resource type="Texture2D" uid="uid://d1y6slgw0vqq0" path="res://assets/Farming n Foraging/crops/beetroot.png" id="3_v6hke"]
 [ext_resource type="Texture2D" uid="uid://dfx83as5h6ie7" path="res://assets/game/Characters/farming/hammer.png" id="4_gcdec"]
 [ext_resource type="Texture2D" uid="uid://de73bdnt02b8c" path="res://assets/game/Characters/basic/jump.png" id="5_5a8s8"]
 [ext_resource type="Texture2D" uid="uid://dsm4sb2oyqngf" path="res://assets/game/Characters/basic/run.png" id="6_bb806"]
@@ -14,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://jmsdyiniasej" path="res://assets/game/Characters/farming/milk.png" id="8_8e1dx"]
 [ext_resource type="Texture2D" uid="uid://cm8kquxj26xtx" path="res://assets/game/Characters/farming/pickaxe.png" id="9_87yxu"]
 [ext_resource type="Texture2D" uid="uid://cllsy1uj65tmc" path="res://assets/game/Characters/farming/planting.png" id="10_cgf2i"]
+[ext_resource type="Texture2D" uid="uid://cvm4o2lvffthk" path="res://assets/Character Animations/basic/pickup-sheet.png" id="12_hqh2j"]
 [ext_resource type="Texture2D" uid="uid://chuxhcf67jjpg" path="res://assets/game/Characters/farming/sickle.png" id="12_k4mf2"]
 [ext_resource type="Texture2D" uid="uid://pls4iponyalf" path="res://assets/game/Characters/attack/spear.png" id="13_18tuw"]
 [ext_resource type="Texture2D" uid="uid://dkkq6w7nqguxe" path="res://assets/game/Characters/attack/sword.png" id="14_wb2d6"]
@@ -25,6 +28,21 @@
 [ext_resource type="Script" path="res://scenes/characters/player/tilling_state.gd" id="22_qgv7u"]
 [ext_resource type="Script" path="res://scenes/characters/player/watering_state.gd" id="23_fdy7g"]
 [ext_resource type="PackedScene" uid="uid://dng53ysb2u8nm" path="res://scenes/components/hit_component.tscn" id="24_uv6il"]
+[ext_resource type="Script" path="res://scenes/characters/player/pickup.gd" id="26_pejcs"]
+[ext_resource type="Script" path="res://scenes/characters/player/plant.gd" id="29_wp752"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urj27"]
+shader = ExtResource("3_qu2cq")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe0yu"]
+atlas = ExtResource("3_v6hke")
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxikk"]
 atlas = ExtResource("3_stgns")
@@ -753,6 +771,22 @@ region = Rect2(320, 0, 80, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_44bsw"]
 atlas = ExtResource("9_87yxu")
 region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p78wx"]
+atlas = ExtResource("12_hqh2j")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4l7r"]
+atlas = ExtResource("12_hqh2j")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llj5o"]
+atlas = ExtResource("12_hqh2j")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47hft"]
+atlas = ExtResource("12_hqh2j")
+region = Rect2(240, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7jc5"]
 atlas = ExtResource("10_cgf2i")
@@ -2173,6 +2207,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_p78wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4l7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llj5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47hft")
+}],
+"loop": false,
+"name": &"pickup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_y7jc5")
 }, {
 "duration": 1.0,
@@ -2201,7 +2252,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_20o4n")
 }],
-"loop": true,
+"loop": false,
 "name": &"plant_front",
 "speed": 7.0
 }, {
@@ -2218,7 +2269,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fhrj4")
 }],
-"loop": true,
+"loop": false,
 "name": &"plant_left",
 "speed": 7.0
 }, {
@@ -2235,7 +2286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xc7xh")
 }],
-"loop": true,
+"loop": false,
 "name": &"plant_right",
 "speed": 7.0
 }, {
@@ -2852,10 +2903,16 @@ collision_layer = 2
 script = ExtResource("1_xccpj")
 inventory = ExtResource("2_kjvec")
 
+[node name="ItemCollected" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_urj27")
+position = Vector2(1.5, -26)
+scale = Vector2(1, 1.066)
+texture = SubResource("AtlasTexture_xe0yu")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
-animation = &"watering_back"
+animation = &"plant_back"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -2889,6 +2946,18 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("23_fdy7g")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
+
+[node name="Pickup" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
+script = ExtResource("26_pejcs")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
+
+[node name="Plant" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
+script = ExtResource("29_wp752")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")

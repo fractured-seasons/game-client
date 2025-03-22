@@ -30,7 +30,7 @@ func growth_states(starting_day: int, current_day: int):
 	# Afisam lista sa vedem fiecare planta ce stadii are (valorile)
 	print("Growth state list", growth_states_list)
 	# Num states = numarul de stari al plantei
-	var num_states = growth_states_list.size()
+	var num_states = growth_states_list.size() - 2
 	
 	# Calculam current_state_index, practic pozitia din lista care indica starea la care se afla planta
 	var growth_days_passed = (current_day - starting_day) % num_states

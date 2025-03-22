@@ -23,6 +23,8 @@ static func is_movement_input() -> bool:
 		return true
 
 static func use_tool() -> bool:
-	var use_tool_value: bool = Input.is_action_just_pressed("hit")
-	
+	var use_tool_value: bool = Input.is_action_just_pressed("hit") or Input.is_action_just_pressed("plant")
+	if Input.is_action_just_pressed("plant"):
+		if !CropsCursorComponent.return_se_planteaza():
+			return false
 	return use_tool_value

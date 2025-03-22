@@ -1,13 +1,11 @@
 extends Node2D
 
-var harvest_scene = preload("res://scenes/objects/plants/sunflower_harvest.tscn")
+var harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.tscn")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
-
-@onready var harvest_shader = preload("res://scenes/objects/plants/before_harvesting.gdshader")
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
 
@@ -20,7 +18,6 @@ func _ready() -> void:
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 
-
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
 	# Practic, growth_state trebuie sa ia valori pana la cat e maximul de stari
@@ -29,8 +26,8 @@ func _process(delta: float) -> void:
 	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
-
-
+	if growth_state != DataTypes.GrowthStates.Harvesting:
+		sprite_2d.material = null
 func on_hurt(hit_damage: int) -> void:
 	if !growth_cycle_component.is_watered:
 		watering_particles.emitting = true
@@ -41,18 +38,10 @@ func on_hurt(hit_damage: int) -> void:
 
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
-	
+
 func on_crop_harvesting() -> void:
 	
-	sprite_2d.material = ShaderMaterial.new()
-	sprite_2d.material.shader = harvest_shader
-	sprite_2d.material.set("shader_parameter/flash_speed", 15)
-	sprite_2d.material.set("shader_parameter/transparency", 1)
-	sprite_2d.material.set("shader_parameter/intensity", 0.5)
-	
-	await get_tree().create_timer(10.0).timeout
 	var harvest_instance = harvest_scene.instantiate() as Node2D
 	harvest_instance.global_position = global_position
 	get_parent().add_child(harvest_instance)
 	queue_free()
-	

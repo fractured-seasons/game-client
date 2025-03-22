@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://16vy57ohdd80"]
+
+[ext_resource type="Texture2D" uid="uid://bojsyx6jf71cp" path="res://assets/Farming n Foraging/crops/tomato.png" id="1_gvwbq"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_gn8xk"]
+[ext_resource type="Resource" uid="uid://b1t34hl1msmgi" path="res://scenes/objects/inventory/items/PlantTomato.tres" id="3_1brt2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkcpa"]
+atlas = ExtResource("1_gvwbq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27wx8"]
+radius = 8.0
+
+[node name="TomatoSeeds" type="Sprite2D"]
+texture = SubResource("AtlasTexture_jkcpa")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_gn8xk")]
+collectable_name = "TomatoSeeds"
+item = ExtResource("3_1brt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_27wx8")

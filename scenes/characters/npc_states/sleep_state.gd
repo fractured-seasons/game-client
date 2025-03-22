@@ -2,7 +2,7 @@ extends NodeState
 
 @export var character: NonPlayableCharacter
 @export var animated_sprite_2d: AnimatedSprite2D
-@export var idle_state_time_interval: float = 5.0
+@export var idle_state_time_interval: float = 20.0
 
 @onready var idle_state_timer: Timer = Timer.new()
 
@@ -23,30 +23,10 @@ func _on_physics_process(_delta : float) -> void:
 
 func _on_next_transitions() -> void:
 	if idle_state_timeout:
-		transition.emit("Walk")
-
+		transition.emit("Idle")
 
 func _on_enter() -> void:
-	var direction = character.last_direction
-	if direction != Vector2.ZERO:
-		if abs(direction.y) > abs(direction.x):
-			if direction.y > 0:
-				character.idle_animation = "idle_front"
-				animated_sprite_2d.flip_h = false
-			else:
-				character.idle_animation = "idle_back"
-				animated_sprite_2d.flip_h = false
-		else:
-			if direction.x > 0:
-				character.idle_animation = "idle_left"
-				animated_sprite_2d.flip_h = true
-			else:
-				character.idle_animation = "idle_left"
-				animated_sprite_2d.flip_h = false
-	else:
-		character.idle_animation = "idle_front"
-	if character.idle_animation:
-		animated_sprite_2d.play(character.idle_animation)
+	animated_sprite_2d.play("sleep")
 	
 	idle_state_timeout = false
 	idle_state_timer.start()

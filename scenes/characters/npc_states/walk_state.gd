@@ -37,16 +37,20 @@ func _on_physics_process(_delta : float) -> void:
 	if abs(target_direction.y) > abs(target_direction.x):
 		if target_position.y > character.global_position.y:
 			animated_sprite_2d.play("walk_front")
+			animated_sprite_2d.flip_h = false
 		else:
 			animated_sprite_2d.play("walk_back")
+			animated_sprite_2d.flip_h = false
 	else:
 		if target_position.x > character.global_position.x:
-			animated_sprite_2d.play("walk_right")
+			animated_sprite_2d.play("walk_left")
+			animated_sprite_2d.flip_h = true
 		else:
 			animated_sprite_2d.play("walk_left")
+			animated_sprite_2d.flip_h = false
 	var velocity: Vector2 = target_direction * speed
 	character.last_direction = target_direction
-
+	
 	if navigation_agent_2d.avoidance_enabled:
 		navigation_agent_2d.velocity = velocity
 	else:
@@ -62,10 +66,7 @@ func on_safe_velocity_computed(safe_velocity: Vector2) -> void:
 func _on_next_transitions() -> void:
 	if character.current_walk_cycle == character.walk_cycles:
 		character.velocity = Vector2.ZERO
-		
-		#
-		
-		transition.emit("Idle")
+		transition.emit("Eat")
 
 func _on_enter() -> void:
 	# Reset the walk cycle after successfully finished 
@@ -73,3 +74,4 @@ func _on_enter() -> void:
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()
+	

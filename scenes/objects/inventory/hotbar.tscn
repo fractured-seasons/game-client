@@ -40,3 +40,5 @@ position = Vector2(18, 16)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_26ikp")
 offset = Vector2(-1, 0)
+
+[node name="Timer" type="Timer" parent="."]

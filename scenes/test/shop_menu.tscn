@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2347k13iiagv"]
+[gd_scene load_steps=23 format=3 uid="uid://d2347k13iiagv"]
 
 [ext_resource type="Script" path="res://shop_menu.gd" id="1_erejv"]
 [ext_resource type="Texture2D" uid="uid://bcq85s8la1u0m" path="res://assets/UI/World of Solaria UI Asset Pack Update 03a/World of Solaria UI Asset Pack Update 03a/PNG/Buttons & Icons.png" id="2_qrgwm"]
@@ -40,7 +40,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_edu37")
 }],
 "loop": true,
-"name": &"OnionSeeds",
+"name": &"PlantOnion",
 "speed": 5.0
 }, {
 "frames": [{
@@ -48,7 +48,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_vctmi")
 }],
 "loop": true,
-"name": &"SunflowerSeeds",
+"name": &"PlantSunflower",
 "speed": 5.0
 }, {
 "frames": [{
@@ -56,7 +56,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gjf5m")
 }],
 "loop": true,
-"name": &"TomatoSeeds",
+"name": &"PlantTomato",
 "speed": 5.0
 }, {
 "frames": [{
@@ -64,20 +64,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_jt3jy")
 }],
 "loop": true,
-"name": &"WatermelonSeeds",
+"name": &"PlantWatermelon",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qws0v"]
-atlas = ExtResource("6_wot12")
-region = Rect2(160, 144, 16, 16)
-
 [sub_resource type="LabelSettings" id="LabelSettings_3ftxg"]
 font_size = 14
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7h5e"]
-atlas = ExtResource("2_qrgwm")
-region = Rect2(352, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5e2y"]
 atlas = ExtResource("2_qrgwm")
@@ -86,6 +78,21 @@ region = Rect2(64, 448, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_755if"]
 atlas = ExtResource("2_qrgwm")
 region = Rect2(432, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qws0v"]
+atlas = ExtResource("6_wot12")
+region = Rect2(160, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7h5e"]
+atlas = ExtResource("2_qrgwm")
+region = Rect2(352, 64, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3a6r"]
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ix47c"]
+font_size = 12
+font_color = Color(1, 0, 0, 1)
 
 [node name="ShopMenu" type="StaticBody2D"]
 script = ExtResource("1_erejv")
@@ -128,37 +135,7 @@ z_index = 1
 position = Vector2(94, 37)
 scale = Vector2(2.0625, 2)
 sprite_frames = SubResource("SpriteFrames_nku58")
-animation = &"WatermelonSeeds"
-
-[node name="Price" type="Label" parent="."]
-z_index = 1
-offset_left = 18.0
-offset_top = 70.0
-offset_right = 38.0
-offset_bottom = 93.0
-text = "15"
-horizontal_alignment = 2
-
-[node name="SellPrice" type="Label" parent="."]
-z_index = 1
-offset_left = 133.0
-offset_top = 71.0
-offset_right = 153.0
-offset_bottom = 94.0
-text = "15"
-horizontal_alignment = 2
-
-[node name="CoinSprite" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(49, 82)
-scale = Vector2(1.21875, 1.3125)
-texture = SubResource("AtlasTexture_qws0v")
-
-[node name="CoinSprite2" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(164, 83)
-scale = Vector2(1.21875, 1.3125)
-texture = SubResource("AtlasTexture_qws0v")
+animation = &"PlantTomato"
 
 [node name="SeedName" type="Label" parent="."]
 z_index = 1
@@ -166,49 +143,136 @@ offset_left = 13.0
 offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 38.0
-text = "Onion"
+text = "SunflowerSeeds"
 label_settings = SubResource("LabelSettings_3ftxg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BuyButton" type="Button" parent="."]
+[node name="SellControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 134.0
+offset_top = 51.0
+offset_right = 174.0
+offset_bottom = 91.0
+
+[node name="SellButton" type="Button" parent="SellControl"]
 self_modulate = Color(0.4761, 0.479665, 0.69, 0)
 z_index = 1
-offset_left = 25.0
-offset_top = 53.0
-offset_right = 49.0
-offset_bottom = 72.0
+layout_mode = 0
+offset_left = 4.0
+offset_right = 29.0
+offset_bottom = 19.0
 
-[node name="Sprite2D" type="Sprite2D" parent="BuyButton"]
+[node name="Sprite2D2" type="Sprite2D" parent="SellControl/SellButton"]
+position = Vector2(15, 11)
+scale = Vector2(1.46484, 1.32812)
+texture = SubResource("AtlasTexture_h5e2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="SellControl/SellButton"]
+position = Vector2(15, 10)
+scale = Vector2(0.75, 0.8125)
+texture = SubResource("AtlasTexture_755if")
+
+[node name="CoinSprite2" type="Sprite2D" parent="SellControl"]
+z_index = 1
+position = Vector2(30, 32)
+scale = Vector2(1.21875, 1.3125)
+texture = SubResource("AtlasTexture_qws0v")
+
+[node name="SellPrice" type="Label" parent="SellControl"]
+z_index = 1
+layout_mode = 0
+offset_left = -1.0
+offset_top = 20.0
+offset_right = 19.0
+offset_bottom = 43.0
+text = "15"
+horizontal_alignment = 2
+
+[node name="BuyControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 51.0
+offset_right = 60.0
+offset_bottom = 91.0
+
+[node name="BuyButton" type="Button" parent="BuyControl"]
+self_modulate = Color(0.4761, 0.479665, 0.69, 0)
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 29.0
+offset_bottom = 21.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BuyControl/BuyButton"]
 z_index = 2
 position = Vector2(12, 9)
 scale = Vector2(0.742187, 0.664063)
 texture = SubResource("AtlasTexture_y7h5e")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BuyButton"]
+[node name="Sprite2D2" type="Sprite2D" parent="BuyControl/BuyButton"]
 position = Vector2(12, 10)
 scale = Vector2(1.46484, 1.32812)
 texture = SubResource("AtlasTexture_h5e2y")
 
-[node name="SellButton" type="Button" parent="."]
-self_modulate = Color(0.4761, 0.479665, 0.69, 0)
+[node name="Price" type="Label" parent="BuyControl"]
 z_index = 1
-offset_left = 138.0
-offset_top = 51.0
-offset_right = 163.0
-offset_bottom = 70.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = 19.0
+offset_right = 18.0
+offset_bottom = 42.0
+text = "15"
+horizontal_alignment = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="SellButton"]
-position = Vector2(15, 11)
-scale = Vector2(1.46484, 1.32812)
-texture = SubResource("AtlasTexture_h5e2y")
+[node name="CoinSprite" type="Sprite2D" parent="BuyControl"]
+z_index = 1
+position = Vector2(29, 31)
+scale = Vector2(1.21875, 1.3125)
+texture = SubResource("AtlasTexture_qws0v")
 
-[node name="Sprite2D" type="Sprite2D" parent="SellButton"]
-position = Vector2(15, 10)
-scale = Vector2(0.75, 0.8125)
-texture = SubResource("AtlasTexture_755if")
+[node name="NotBuy" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 36.0
+offset_right = 66.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="NotBuy"]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+text = "Out of order"
+label_settings = SubResource("LabelSettings_b3a6r")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NotSell" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.0
+offset_top = 35.0
+offset_right = 192.0
+offset_bottom = 94.0
+
+[node name="Label" type="Label" parent="NotSell"]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 57.0
+text = "This is not what I want"
+label_settings = SubResource("LabelSettings_ix47c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
-[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
-[connection signal="pressed" from="SellButton" to="." method="sell"]
+[connection signal="pressed" from="SellControl/SellButton" to="." method="sell"]
+[connection signal="pressed" from="BuyControl/BuyButton" to="." method="_on_buy_button_pressed"]

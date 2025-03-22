@@ -5,8 +5,6 @@ extends Node
 @export var tilled_soil_tilemap_layer: TileMapLayer
 @export var terrain_set: int = 0
 @export var terrain: int = 1
-
-@onready var selector: Sprite2D = $Selector
 var player: Player
 var mouse_position: Vector2
 var cell_position: Vector2i
@@ -20,7 +18,6 @@ func _ready() -> void:
 	# print(player.global_position)
 
 func _process(delta: float) -> void:
-		# update_selector()
 		pass
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_dirt"):
@@ -54,15 +51,3 @@ func add_tilled_soil_cell() -> void:
 func remove_tilled_soil_cell() -> void:
 	if distance < 20.0:
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], 0 , -1, true)
-
-func update_selector():
-	var cells: Array[Vector2i] = tilled_soil_tilemap_layer.get_used_cells()
-	var threshold: int = 10
-	selector.visible = false
-	
-	for cell in cells:
-		var cell_position: Vector2 = tilled_soil_tilemap_layer.map_to_local(cell)
-		if player.global_position.distance_to(cell_position) < threshold:
-			selector.position = cell_position
-			selector.visible = true
-			break

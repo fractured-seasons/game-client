@@ -35,17 +35,42 @@ func insertSlot(index: int, inventorySlot: InventorySlot):
 	slots[index] = inventorySlot
 	updated.emit()
 
-func use_item_at_index(index: int) -> void:
+func select_item_at_index(index: int) -> void:
 	if index < 0 || index >= slots.size() || !slots[index].item:
 		ToolManager.select_tool(DataTypes.Tools.None)
 		return
-	
+	var slot = slots[index]
+	if slot.item.name in DataTypes.Tools.keys():
+		ToolManager.select_tool(DataTypes.Tools[slot.item.name])
+	elif slot.item.name in DataTypes.PlantTypes.keys():
+		ToolManager.select_tool(DataTypes.Tools.Plant)
+		ToolManager.select_seed(DataTypes.PlantTypes[slot.item.name])
+		
+func use_item_at_index(index: int) -> void:
+	if !slots[index].item:
+		ToolManager.select_tool(DataTypes.Tools.None)
+		return
 	var slot = slots[index]
 	if slot.item.name in DataTypes.Tools.keys():
 		var weapon_name = slot.item.name
-		
 		ToolManager.select_tool(DataTypes.Tools[weapon_name])
+		# print(slot.item.name)
+	elif slot.item.name in DataTypes.PlantTypes.keys():
+		# print("hello")
+		ToolManager.select_tool(DataTypes.Tools.Plant)
+		ToolManager.select_seed(DataTypes.PlantTypes[slot.item.name])
+		
+		if slot.amount > 1:
+			slot.amount -= 1
+			CropsCursorComponent.input_se_planteaza(true)
+			updated.emit()
+			return
+		
+		remove_at_index(index)
+		print("made it false")
+		# CropsCursorComponent.input_se_planteaza(false)
 	else:
+		# print(slot.item.name)
 		ToolManager.select_tool(DataTypes.Tools.None)
 		if slot.amount > 1:
 			print("out")
@@ -57,6 +82,7 @@ func use_item_at_index(index: int) -> void:
 
 func return_slots():
 	return slots
+
 
 func loader():
 	updated.emit()

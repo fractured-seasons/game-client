@@ -2,6 +2,13 @@ extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
+# var item: InventoryItem
+
+func _ready() -> void:
+	player.item_collected.connect(_on_item_collected)
+
+func _on_item_collected():
+	transition.emit("Pickup")
 
 func _on_process(_delta : float) -> void:
 	pass
@@ -34,6 +41,9 @@ func _on_next_transitions() -> void:
 	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
 		transition.emit("Watering")
 	
+	if player.current_tool == DataTypes.Tools.Plant && GameInputEvents.use_tool():
+		transition.emit("Plant")
+
 func _on_enter() -> void:
 	pass
 

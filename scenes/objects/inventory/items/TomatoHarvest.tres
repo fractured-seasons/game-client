@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bpaiurw0ccxus"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_8x87i"]
+[ext_resource type="Texture2D" uid="uid://bojsyx6jf71cp" path="res://assets/Farming n Foraging/crops/tomato.png" id="2_pm44t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysuxk"]
+atlas = ExtResource("2_pm44t")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_8x87i")
+name = "TomatoHarvest"
+texture = SubResource("AtlasTexture_ysuxk")
+maxAmountPrStack = 64
