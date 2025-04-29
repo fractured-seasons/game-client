@@ -1,30 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://cftqkluxlpd6v"]
+[gd_scene load_steps=10 format=3 uid="uid://cftqkluxlpd6v"]
 
 [ext_resource type="Texture2D" uid="uid://c7yhn41nxnp84" path="res://assets/game/objects/Tree.png" id="1_3fa2t"]
+[ext_resource type="Shader" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_i35c1"]
+[ext_resource type="Script" path="res://scenes/objects/trees/summer_small_tree.gd" id="3_smw5w"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="4_thj47"]
+[ext_resource type="PackedScene" uid="uid://by1rn2b3fb35x" path="res://scenes/components/damage_component.tscn" id="5_1l8j0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_734ts"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsjg4"]
+resource_local_to_scene = true
+shader = ExtResource("1_i35c1")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+shader_parameter/hit_effect_intensity = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc17i"]
 atlas = ExtResource("1_3fa2t")
-region = Rect2(100, 144, 25, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jb3it"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_734ts")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+region = Rect2(96, 144, 32, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gpiqo"]
 radius = 2.0
 
-[node name="SummerSmallTree" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7n7m"]
+size = Vector2(7.375, 10)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_jb3it")
+[node name="SummerSmallTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_jsjg4")
+texture = SubResource("AtlasTexture_hc17i")
 offset = Vector2(0, -18)
+script = ExtResource("3_smw5w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_gpiqo")
+
+[node name="HurtComponent" parent="." instance=ExtResource("4_thj47")]
+tool = 1
+
+[node name="HurtComponent2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_v7n7m")
+debug_color = Color(0.796406, 0.267834, 0.817027, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("5_1l8j0")]
+max_damage = 3

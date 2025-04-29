@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://c47gh7tyqouig"]
+
+[ext_resource type="Script" path="res://scenes/objects/plants/onion.gd" id="1_8mlvg"]
+[ext_resource type="Texture2D" uid="uid://csorb4mi4fe8q" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Onion.png" id="1_dgqbx"]
+[ext_resource type="Resource" uid="uid://cpii6bpybanvb" path="res://scenes/objects/inventory/items/OnionHarvest.tres" id="2_ij4ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss0fr"]
+atlas = ExtResource("1_dgqbx")
+region = Rect2(32, 14, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfesi"]
+atlas = ExtResource("1_dgqbx")
+region = Rect2(48, 14, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0862"]
+atlas = ExtResource("1_dgqbx")
+region = Rect2(64, 14, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbv2w"]
+atlas = ExtResource("1_dgqbx")
+region = Rect2(16, 14, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss0fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfesi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0862")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbv2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mory"]
+radius = 3.0
+
+[node name="Onion" type="Node2D"]
+script = ExtResource("1_8mlvg")
+inventory_item = ExtResource("2_ij4ye")
+
+[node name="OnionSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_iqick")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_5mory")
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

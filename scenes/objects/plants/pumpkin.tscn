@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://yibbdaj8h8bw"]
+
+[ext_resource type="Texture2D" uid="uid://cawlivdxfyp5f" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Pumpkin.png" id="1_0qgg2"]
+[ext_resource type="Script" path="res://scenes/objects/plants/pumpkin.gd" id="1_k7oft"]
+[ext_resource type="Resource" uid="uid://kjh37xwx0al7" path="res://scenes/objects/inventory/items/PumpkinHarvest.tres" id="2_tnmja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc83l"]
+atlas = ExtResource("1_0qgg2")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruyx8"]
+atlas = ExtResource("1_0qgg2")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlnj6"]
+atlas = ExtResource("1_0qgg2")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q5im"]
+atlas = ExtResource("1_0qgg2")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcqd1"]
+atlas = ExtResource("1_0qgg2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgmiv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc83l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruyx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlnj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q5im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcqd1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8aqk"]
+radius = 3.0
+
+[node name="Pumpkin" type="Node2D"]
+script = ExtResource("1_k7oft")
+inventory_item = ExtResource("2_tnmja")
+
+[node name="PumpkinSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jgmiv")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_c8aqk")
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

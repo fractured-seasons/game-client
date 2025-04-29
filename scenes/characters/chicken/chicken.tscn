@@ -522,7 +522,6 @@ animations = [{
 radius = 4.0
 
 [node name="Chicken" type="CharacterBody2D"]
-collision_layer = 64
 script = ExtResource("1_65ojt")
 min_walk_cycle = 1
 max_walk_cycle = 2
