@@ -334,8 +334,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c2mvi"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2elg"]
+radius = 3.0
+height = 16.0
 
 [node name="Pig1" type="CharacterBody2D"]
 script = ExtResource("1_coja7")
@@ -346,10 +347,12 @@ max_walk_cycle = 2
 sprite_frames = SubResource("SpriteFrames_v546s")
 animation = &"eat"
 autoplay = "idle_front"
+offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_c2mvi")
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e2elg")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

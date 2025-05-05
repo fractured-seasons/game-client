@@ -2965,7 +2965,6 @@ hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisi
 [node name="HitComponent" parent="." instance=ExtResource("24_uv6il")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
-visible = false
 position = Vector2(-13, -3)
 shape = SubResource("CircleShape2D_eay71")
 debug_color = Color(0.766222, 0.315245, 0.801636, 0.42)

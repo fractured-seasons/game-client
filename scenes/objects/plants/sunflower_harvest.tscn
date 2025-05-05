@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpvtbbalgvftk"]
+[gd_scene load_steps=7 format=3 uid="uid://cpvtbbalgvftk"]
 
 [ext_resource type="Texture2D" uid="uid://bmc1oicksx8pn" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Sunflower.png" id="1_4fahk"]
 [ext_resource type="Shader" path="res://scenes/objects/plants/collectable.gdshader" id="1_fe2rp"]
 [ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_rapxy"]
+[ext_resource type="Resource" uid="uid://c5mjj1pjei17h" path="res://scenes/objects/inventory/items/SunflowerHarvest.tres" id="4_5qrxn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wv6g2"]
 shader = ExtResource("1_fe2rp")
@@ -25,6 +26,7 @@ frame = 1
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_rapxy")]
 collectable_name = "sunflower"
+item = ExtResource("4_5qrxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(0, 8)

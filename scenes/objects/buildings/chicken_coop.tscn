@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cglnn8xcc34ws"]
+
+[ext_resource type="Texture2D" uid="uid://xfx2lj5vq0q" path="res://assets/Animals/misc.png" id="1_h7h7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tf3w"]
+atlas = ExtResource("1_h7h7v")
+region = Rect2(0, 8, 64, 72)
+
+[node name="ChickenCoop" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_2tf3w")
+offset = Vector2(0, -30)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 6)
+polygon = PackedVector2Array(-24, -6, 24, -6, 27, -52, 0, -56, -27, -52)

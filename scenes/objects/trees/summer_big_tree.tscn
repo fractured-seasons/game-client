@@ -24,7 +24,6 @@ radius = 3.0
 size = Vector2(10, 14.25)
 
 [node name="SummerBigTree" type="Sprite2D"]
-y_sort_enabled = true
 material = SubResource("ShaderMaterial_7p2rf")
 texture = SubResource("AtlasTexture_wtfyd")
 offset = Vector2(0, -13)
