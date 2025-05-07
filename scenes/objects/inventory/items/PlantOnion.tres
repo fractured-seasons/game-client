@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bqki07ebehjhk"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_bgopn"]
+[ext_resource type="Texture2D" uid="uid://csorb4mi4fe8q" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Onion.png" id="2_xyr3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvdu2"]
+atlas = ExtResource("2_xyr3q")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_bgopn")
+name = "PlantOnion"
+texture = SubResource("AtlasTexture_pvdu2")
+maxAmountPrStack = 64

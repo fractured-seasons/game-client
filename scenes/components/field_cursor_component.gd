@@ -11,6 +11,7 @@ var cell_position: Vector2i
 var cell_source_id: int
 var local_cell_position: Vector2
 var distance: float
+var animation_playing: bool = false
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -36,17 +37,20 @@ func get_cell_under_mouse() -> void:
 	cell_source_id = grass_tilemap_layer.get_cell_source_id(cell_position)
 	local_cell_position = grass_tilemap_layer.map_to_local(cell_position)
 	distance = player.global_position.distance_to(local_cell_position)
-	
-	# print("Mouse position: ", mouse_position)
-	# print("Cell position: ", cell_position)
-	# print("Cell source id: ", cell_source_id)
-	# print("Local cell position: ", local_cell_position)
-	# print("Distance to: ", distance)
+	#print("Mouse position: ", mouse_position)
+	#print("Cell position: ", cell_position)
+	#print("Cell source id: ", cell_source_id)
+	#print("Local cell position: ", local_cell_position)
+	#print("Distance to: ", distance)
+	#print("\n")
 
 
 func add_tilled_soil_cell() -> void:
-	if distance < 20.0 && cell_source_id != -1:
+	if distance < 20.0 && cell_source_id != -1 && animation_playing == false:
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrain_set, terrain, true)
+		animation_playing = true
+		await get_tree().create_timer(0.6).timeout
+		animation_playing = false
 
 func remove_tilled_soil_cell() -> void:
 	if distance < 20.0:

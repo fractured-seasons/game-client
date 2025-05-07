@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvpmxaxfa3rht"]
+
+[ext_resource type="Texture2D" uid="uid://csorb4mi4fe8q" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Onion.png" id="1_kj8ug"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_pjwt6"]
+[ext_resource type="Resource" uid="uid://bqki07ebehjhk" path="res://scenes/objects/inventory/items/PlantOnion.tres" id="3_pi6w6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cupp4"]
+atlas = ExtResource("1_kj8ug")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uki5m"]
+radius = 6.0
+
+[node name="OnionSeeds" type="Sprite2D"]
+texture = SubResource("AtlasTexture_cupp4")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_pjwt6")]
+collectable_name = "OnionSeeds"
+item = ExtResource("3_pi6w6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_uki5m")

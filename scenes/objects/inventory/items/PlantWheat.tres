@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bskbxcjuy4sl2"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_xji2i"]
+[ext_resource type="Texture2D" uid="uid://b2oxwt8a2o4c" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Wheat.png" id="2_8sqwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwjmr"]
+atlas = ExtResource("2_8sqwd")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_xji2i")
+name = "PlantWheat"
+texture = SubResource("AtlasTexture_nwjmr")
+maxAmountPrStack = 64

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw8mydd2reji3"]
+
+[ext_resource type="Texture2D" uid="uid://b2oxwt8a2o4c" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Wheat.png" id="1_6mp0t"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_qw5qd"]
+[ext_resource type="Resource" uid="uid://bskbxcjuy4sl2" path="res://scenes/objects/inventory/items/PlantWheat.tres" id="3_jy4hs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akb24"]
+atlas = ExtResource("1_6mp0t")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efuue"]
+radius = 7.07107
+
+[node name="WheatSeed" type="Sprite2D"]
+texture = SubResource("AtlasTexture_akb24")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_qw5qd")]
+collectable_name = "WheatSeed"
+item = ExtResource("3_jy4hs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_efuue")

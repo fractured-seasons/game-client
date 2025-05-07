@@ -9,7 +9,10 @@ extends Node
 var flowers_plant_scenes = {
 	"PlantSunflower" : preload("res://scenes/objects/plants/sunflower.tscn"),
 	"PlantWatermelon" : preload("res://scenes/objects/plants/watermelon.tscn"),
-	"PlantTomato": preload("res://scenes/objects/plants/Tomato.tscn")
+	"PlantTomato": preload("res://scenes/objects/plants/Tomato.tscn"),
+	"PlantWheat": preload("res://scenes/objects/plants/wheat.tscn"),
+	"PlantOnion": preload("res://scenes/objects/plants/onion.tscn"),
+	"PlantPumpkin": preload("res://scenes/objects/plants/pumpkin.tscn")
 }
 # var sunflower_plant_scene = preload("res://scenes/objects/plants/sunflower.tscn")
 # var watermelon_plant_scene = preload("res://scenes/objects/plants/watermelon.tscn")

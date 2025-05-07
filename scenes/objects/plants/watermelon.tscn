@@ -11,8 +11,6 @@
 size = Vector2(10.25, 7.25)
 
 [node name="Watermelon" type="Node2D"]
-top_level = true
-visibility_layer = 2
 script = ExtResource("1_lfi5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

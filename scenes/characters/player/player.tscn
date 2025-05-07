@@ -2912,7 +2912,7 @@ texture = SubResource("AtlasTexture_xe0yu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_adehl")
-animation = &"plant_back"
+animation = &"hoe_back"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -2971,9 +2971,9 @@ debug_color = Color(0.766222, 0.315245, 0.801636, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-limit_left = 1
-limit_top = 1
-limit_right = 1250
-limit_bottom = 740
+limit_left = 20
+limit_top = 20
+limit_right = 1270
+limit_bottom = 760
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

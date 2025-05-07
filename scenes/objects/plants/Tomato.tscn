@@ -21,9 +21,14 @@ shader_parameter/number_of_images = Vector2(1, 1)
 radius = 9.0
 
 [node name="Tomato" type="Node2D"]
-top_level = true
 material = SubResource("ShaderMaterial_62hpw")
 script = ExtResource("1_33q06")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("4_2bcbs")
+hframes = 7
+frame = 6
 
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("1_2b73l")]
 growth_states_list = Array[int]([0, 1, 2, 3, 4, 5, 6])
@@ -31,12 +36,6 @@ growth_states_list = Array[int]([0, 1, 2, 3, 4, 5, 6])
 [node name="WateringParticles" parent="." instance=ExtResource("2_y67ra")]
 
 [node name="FloweringParticles" parent="." instance=ExtResource("3_06npj")]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-texture = ExtResource("4_2bcbs")
-hframes = 7
-frame = 6
 
 [node name="HurtComponent" parent="." instance=ExtResource("5_clag7")]
 tool = 3

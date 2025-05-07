@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://xgk5x88c0j7s"]
+
+[ext_resource type="Texture2D" uid="uid://b2oxwt8a2o4c" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Wheat.png" id="1_8wisx"]
+[ext_resource type="Shader" path="res://scenes/objects/plants/collectable.gdshader" id="1_s0fj7"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_vv2i1"]
+[ext_resource type="Resource" uid="uid://gv2jwxqpcp8x" path="res://scenes/objects/inventory/items/WheatHarvest.tres" id="3_h58l2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jnni"]
+shader = ExtResource("1_s0fj7")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 0.4
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evusl"]
+atlas = ExtResource("1_8wisx")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1k3nh"]
+radius = 7.0
+
+[node name="Node2D" type="Sprite2D"]
+material = SubResource("ShaderMaterial_2jnni")
+texture = SubResource("AtlasTexture_evusl")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_vv2i1")]
+item = ExtResource("3_h58l2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_1k3nh")

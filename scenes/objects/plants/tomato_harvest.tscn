@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bndcvo5s8txc"]
+[gd_scene load_steps=8 format=3 uid="uid://bndcvo5s8txc"]
 
+[ext_resource type="Shader" path="res://scenes/objects/plants/collectable.gdshader" id="1_tsypl"]
 [ext_resource type="Texture2D" uid="uid://bojsyx6jf71cp" path="res://assets/Farming n Foraging/crops/tomato.png" id="1_wd3e2"]
 [ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_njhec"]
 [ext_resource type="Resource" uid="uid://bpaiurw0ccxus" path="res://scenes/objects/inventory/items/TomatoHarvest.tres" id="3_lonhl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vh58v"]
+shader = ExtResource("1_tsypl")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 0.4
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8tr"]
 atlas = ExtResource("1_wd3e2")
@@ -13,6 +22,7 @@ radius = 8.0
 
 [node name="TomatoHarvest" type="Sprite2D"]
 top_level = true
+material = SubResource("ShaderMaterial_vh58v")
 position = Vector2(-2.38419e-07, -3)
 scale = Vector2(0.625, 0.6875)
 texture = SubResource("AtlasTexture_6c8tr")

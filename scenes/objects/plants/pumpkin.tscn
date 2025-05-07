@@ -1,8 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://yibbdaj8h8bw"]
+[gd_scene load_steps=17 format=3 uid="uid://yibbdaj8h8bw"]
 
 [ext_resource type="Texture2D" uid="uid://cawlivdxfyp5f" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Pumpkin.png" id="1_0qgg2"]
 [ext_resource type="Script" path="res://scenes/objects/plants/pumpkin.gd" id="1_k7oft"]
 [ext_resource type="Resource" uid="uid://kjh37xwx0al7" path="res://scenes/objects/inventory/items/PumpkinHarvest.tres" id="2_tnmja"]
+[ext_resource type="Shader" path="res://scenes/objects/plants/collectable.gdshader" id="3_u53e4"]
+[ext_resource type="PackedScene" uid="uid://bq7dnlyb4026e" path="res://scenes/components/hurt_component.tscn" id="4_kcidc"]
+[ext_resource type="PackedScene" uid="uid://dpihtf6lkuco1" path="res://scenes/objects/plants/flowering_particles.tscn" id="5_jbkpd"]
+[ext_resource type="PackedScene" uid="uid://c4c1okpsv8dud" path="res://scenes/objects/plants/watering_particles.tscn" id="6_l1yuj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwyec"]
+shader = ExtResource("3_u53e4")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 0.4
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pc83l"]
 atlas = ExtResource("1_0qgg2")
@@ -50,18 +62,36 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8aqk"]
 radius = 3.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1el1"]
+radius = 4.0
+
 [node name="Pumpkin" type="Node2D"]
 script = ExtResource("1_k7oft")
 inventory_item = ExtResource("2_tnmja")
 
 [node name="PumpkinSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_bwyec")
 sprite_frames = SubResource("SpriteFrames_jgmiv")
 
 [node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_c8aqk")
 
+[node name="HurtComponent" parent="." instance=ExtResource("4_kcidc")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_j1el1")
+debug_color = Color(0.731846, 0.427538, 0.538745, 0.42)
+
+[node name="FloweringParticles" parent="." instance=ExtResource("5_jbkpd")]
+
+[node name="WateringParticles" parent="." instance=ExtResource("6_l1yuj")]
+
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
+[connection signal="hurt" from="HurtComponent" to="." method="_on_hurt_component_hurt"]

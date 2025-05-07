@@ -19,7 +19,8 @@ func player_exit(body: Node2D) -> void:
 	$ShopMenu.visible = false
 	tooltip.visible = false
 func _input(event: InputEvent) -> void:
-	if !$ShopMenu.visible and event.is_action_pressed("interact"):
-		$ShopMenu.visible = true
-	elif $ShopMenu.visible and event.is_action_pressed("interact"):
-		$ShopMenu.visible = false
+	if player_in_range:
+		if !$ShopMenu.visible and event.is_action_pressed("interact"):
+			$ShopMenu.visible = true
+		elif $ShopMenu.visible and event.is_action_pressed("interact"):
+			$ShopMenu.visible = false

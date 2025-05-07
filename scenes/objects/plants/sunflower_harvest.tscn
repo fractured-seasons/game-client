@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpvtbbalgvftk"]
+[gd_scene load_steps=8 format=3 uid="uid://cpvtbbalgvftk"]
 
 [ext_resource type="Texture2D" uid="uid://bmc1oicksx8pn" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Sunflower.png" id="1_4fahk"]
 [ext_resource type="Shader" path="res://scenes/objects/plants/collectable.gdshader" id="1_fe2rp"]
@@ -8,10 +8,14 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wv6g2"]
 shader = ExtResource("1_fe2rp")
 shader_parameter/size_effect = 0.1
-shader_parameter/speed = 1.0
+shader_parameter/speed = 0.4
 shader_parameter/highlight_strength = 0.5
 shader_parameter/color_mode_toggle = false
 shader_parameter/is_horizontal = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anb3i"]
+atlas = ExtResource("1_4fahk")
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kmw3s"]
 radius = 5.0
@@ -19,15 +23,11 @@ radius = 5.0
 [node name="SunflowerHarvest" type="Sprite2D"]
 top_level = true
 material = SubResource("ShaderMaterial_wv6g2")
-position = Vector2(0, -9)
-texture = ExtResource("1_4fahk")
-hframes = 6
-frame = 1
+texture = SubResource("AtlasTexture_anb3i")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_rapxy")]
 collectable_name = "sunflower"
 item = ExtResource("4_5qrxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
-position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_kmw3s")

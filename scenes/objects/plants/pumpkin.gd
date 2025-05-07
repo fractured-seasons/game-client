@@ -2,7 +2,11 @@ extends Node2D
 
 @export var inventory_item: InventoryItem
 @onready var sprite: AnimatedSprite2D = $PumpkinSprite
+@onready var hurt_component: HurtComponent = $HurtComponent
+@onready var watering_particles: GPUParticles2D = $WateringParticles
+@onready var flowering_particles: GPUParticles2D = $FloweringParticles
 var growth_stage: int = 0  
+var water_level: float = 0
 var sunlight: float = 1.0  
 var fertilizer: float = 0.0 
 var growing: bool = true  
@@ -10,10 +14,13 @@ var growing: bool = true
 var growth_thread: Thread = Thread.new()  # Thread-ul pentru creștere
 
 func _ready():
+	watering_particles.emitting = false
+	flowering_particles.emitting = false
+	hurt_component.hurt.connect(_on_hurt_component_hurt)
+	sprite.material.set_shader_parameter("speed", 0)
 	# Pornim un thread separat pentru crestere
 	if sprite:
 		sprite.frame = 0
-	growth_thread.start(grow_loop)
 
 func grow_loop():
 	while growing:
@@ -24,10 +31,16 @@ func grow_loop():
 		
 		growth_stage += 1
 		update_sprite()
-		print("Planta a crescut! Stadiu: ", growth_stage)
+		print("Pumpkin a crescut! Stadiu: ", growth_stage)
+
+		if growth_stage == 3:
+			flowering_particles.emitting = true
+			await get_tree().create_timer(5.0).timeout
+			flowering_particles.emitting = false
 
 		if growth_stage >= 4:
-			print("Planta este matură!")
+			print("Pumpkin este matur!")
+			sprite.material.set_shader_parameter("speed", 0.4)
 			growing = false
 			return
 
@@ -48,3 +61,12 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 				queue_free()
 			else:
 				print("Inventory full or item not collected")
+
+
+func _on_hurt_component_hurt(hit) -> void:
+	print("pumpkin watered")
+	water_level = 1.0
+	watering_particles.emitting = true
+	await get_tree().create_timer(5.0).timeout
+	watering_particles.emitting = false
+	growth_thread.start(grow_loop)

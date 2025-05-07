@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://304qw0s1g1hg"]
+
+[ext_resource type="Script" path="res://scenes/objects/inventory/inventory_item.gd" id="1_e1rj6"]
+[ext_resource type="Texture2D" uid="uid://cawlivdxfyp5f" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Pumpkin.png" id="2_o3j0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o753c"]
+atlas = ExtResource("2_o3j0y")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_e1rj6")
+name = "PlantPumpkin"
+texture = SubResource("AtlasTexture_o753c")
+maxAmountPrStack = 64

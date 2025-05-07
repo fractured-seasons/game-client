@@ -12,7 +12,10 @@ enum PlantTypes {
 	None,
 	PlantSunflower,
 	PlantWatermelon,
-	PlantTomato
+	PlantTomato,
+	PlantWheat,
+	PlantOnion,
+	PlantPumpkin
 }
 
 enum GrowthStates {

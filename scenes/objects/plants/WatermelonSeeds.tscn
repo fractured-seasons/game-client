@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8kw1604p0wk3"]
+
+[ext_resource type="Texture2D" uid="uid://croik72edl3pp" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Summer/Watermelon.png" id="1_u8f4i"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_63ffa"]
+[ext_resource type="Resource" uid="uid://bihalxvodxciy" path="res://scenes/objects/inventory/items/PlantWatermelon.tres" id="3_ml68c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb0lt"]
+atlas = ExtResource("1_u8f4i")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_djr48"]
+radius = 6.08276
+
+[node name="WatermelonSeeds" type="Sprite2D"]
+texture = SubResource("AtlasTexture_mb0lt")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_63ffa")]
+collectable_name = "WatermelonSeeds"
+item = ExtResource("3_ml68c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_djr48")

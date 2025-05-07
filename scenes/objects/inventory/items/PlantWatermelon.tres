@@ -9,6 +9,6 @@ region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_l8m1e")
-name = "watermelon_seed"
+name = "PlantWatermelon"
 texture = SubResource("AtlasTexture_twktf")
 maxAmountPrStack = 64

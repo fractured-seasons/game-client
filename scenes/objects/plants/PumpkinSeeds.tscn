@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://yyjgct08a6ss"]
+
+[ext_resource type="Texture2D" uid="uid://cawlivdxfyp5f" path="res://assets/game/Hana Caraka Crops - Premium/Hana Caraka Crops - Premium/Crops/Spring/Pumpkin.png" id="1_vlj5n"]
+[ext_resource type="PackedScene" uid="uid://b5w2q20xw6vle" path="res://scenes/components/collectable_component.tscn" id="2_qnhyv"]
+[ext_resource type="Resource" uid="uid://304qw0s1g1hg" path="res://scenes/objects/inventory/items/PlantPumpkin.tres" id="3_jaffu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv7un"]
+atlas = ExtResource("1_vlj5n")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ulje"]
+radius = 6.08276
+
+[node name="PumpkinSeeds" type="Sprite2D"]
+texture = SubResource("AtlasTexture_dv7un")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_qnhyv")]
+collectable_name = "PumpkinSeeds"
+item = ExtResource("3_jaffu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_4ulje")
